@@ -1,0 +1,1737 @@
+,author,title,summary
+0,Minghao Fu; Ke Zhu; Jianxin Wu,DTL: Disentangled Transfer Learning for Visual Recognition,"When pre-trained models become rapidly larger, the cost of fine-tuning on
+downstream tasks steadily increases, too. To economically fine-tune these
+models, parameter-efficient transfer learning (PETL) is proposed, which only
+tunes a tiny subset of trainable parameters to efficiently learn quality
+representations. However, current PETL methods are facing the dilemma that
+during training the GPU memory footprint is not effectively reduced as
+trainable parameters. PETL will likely fail, too, if the full fine-tuning
+encounters the out-of-GPU-memory issue. This phenomenon happens because
+trainable parameters from these methods are generally entangled with the
+backbone, such that a lot of intermediate states have to be stored in GPU
+memory for gradient propagation. To alleviate this problem, we introduce
+Disentangled Transfer Learning (DTL), which disentangles the trainable
+parameters from the backbone using a lightweight Compact Side Network (CSN). By
+progressively extracting task-specific information with a few low-rank linear
+mappings and appropriately adding the information back to the backbone, CSN
+effectively realizes knowledge transfer in various downstream tasks. We
+conducted extensive experiments to validate the effectiveness of our method.
+The proposed method not only reduces a large amount of GPU memory usage and
+trainable parameters, but also outperforms existing PETL methods by a
+significant margin in accuracy, achieving new state-of-the-art on several
+standard benchmarks. The code is available at https://github.com/heekhero/DTL."
+1,Guiqin Wang; Peng Zhao; Yanjiang Shi; Cong Zhao; Shusen Yang,Generative Model-Based Feature Knowledge Distillation for Action Recognition,"Knowledge distillation (KD), a technique widely employed in computer vision,
+has emerged as a de facto standard for improving the performance of small
+neural networks. However, prevailing KD-based approaches in video tasks
+primarily focus on designing loss functions and fusing cross-modal information.
+This overlooks the spatial-temporal feature semantics, resulting in limited
+advancements in model compression. Addressing this gap, our paper introduces an
+innovative knowledge distillation framework, with the generative model for
+training a lightweight student model. In particular, the framework is organized
+into two steps: the initial phase is Feature Representation, wherein a
+generative model-based attention module is trained to represent feature
+semantics; Subsequently, the Generative-based Feature Distillation phase
+encompasses both Generative Distillation and Attention Distillation, with the
+objective of transferring attention-based feature semantics with the generative
+model. The efficacy of our approach is demonstrated through comprehensive
+experiments on diverse popular datasets, proving considerable enhancements in
+video action recognition task. Moreover, the effectiveness of our proposed
+framework is validated in the context of more intricate video action detection
+task. Our code is available at https://github.com/aaai-24/Generative-based-KD."
+2,Xiang Li; Junbo Yin; Wei Li; Chengzhong Xu; Ruigang Yang; Jianbing Shen,"DI-V2X: Learning Domain-Invariant Representation for Vehicle-Infrastructure
+Collaborative 3D Object Detection","Vehicle-to-Everything (V2X) collaborative perception has recently gained
+significant attention due to its capability to enhance scene understanding by
+integrating information from various agents, e.g., vehicles, and
+infrastructure. However, current works often treat the information from each
+agent equally, ignoring the inherent domain gap caused by the utilization of
+different LiDAR sensors of each agent, thus leading to suboptimal performance.
+In this paper, we propose DI-V2X, that aims to learn Domain-Invariant
+representations through a new distillation framework to mitigate the domain
+discrepancy in the context of V2X 3D object detection. DI-V2X comprises three
+essential components: a domain-mixing instance augmentation (DMA) module, a
+progressive domain-invariant distillation (PDD) module, and a domain-adaptive
+fusion (DAF) module. Specifically, DMA builds a domain-mixing 3D instance bank
+for the teacher and student models during training, resulting in aligned data
+representation. Next, PDD encourages the student models from different domains
+to gradually learn a domain-invariant feature representation towards the
+teacher, where the overlapping regions between agents are employed as guidance
+to facilitate the distillation process. Furthermore, DAF closes the domain gap
+between the students by incorporating calibration-aware domain-adaptive
+attention. Extensive experiments on the challenging DAIR-V2X and V2XSet
+benchmark datasets demonstrate DI-V2X achieves remarkable performance,
+outperforming all the previous V2X models. Code is available at
+https://github.com/Serenos/DI-V2X"
+3,Haibo Jin; Haoxuan Che; Yi Lin; Hao Chen,PromptMRG: Diagnosis-Driven Prompts for Medical Report Generation,"Automatic medical report generation (MRG) is of great research value as it
+has the potential to relieve radiologists from the heavy burden of report
+writing. Despite recent advancements, accurate MRG remains challenging due to
+the need for precise clinical understanding and disease identification.
+Moreover, the imbalanced distribution of diseases makes the challenge even more
+pronounced, as rare diseases are underrepresented in training data, making
+their diagnostic performance unreliable. To address these challenges, we
+propose diagnosis-driven prompts for medical report generation (PromptMRG), a
+novel framework that aims to improve the diagnostic accuracy of MRG with the
+guidance of diagnosis-aware prompts. Specifically, PromptMRG is based on
+encoder-decoder architecture with an extra disease classification branch. When
+generating reports, the diagnostic results from the classification branch are
+converted into token prompts to explicitly guide the generation process. To
+further improve the diagnostic accuracy, we design cross-modal feature
+enhancement, which retrieves similar reports from the database to assist the
+diagnosis of a query image by leveraging the knowledge from a pre-trained CLIP.
+Moreover, the disease imbalanced issue is addressed by applying an adaptive
+logit-adjusted loss to the classification branch based on the individual
+learning status of each disease, which overcomes the barrier of text decoder's
+inability to manipulate disease distributions. Experiments on two MRG
+benchmarks show the effectiveness of the proposed method, where it obtains
+state-of-the-art clinical efficacy performance on both datasets. The code is
+available at https://github.com/jhb86253817/PromptMRG."
+4,Louis Mahon; Thomas Lukasiewicz,"Hard Regularization to Prevent Deep Online Clustering Collapse without Data
+Augmentation","Online deep clustering refers to the joint use of a feature extraction
+network and a clustering model to assign cluster labels to each new data point
+or batch as it is processed. While faster and more versatile than offline
+methods, online clustering can easily reach the collapsed solution where the
+encoder maps all inputs to the same point and all are put into a single
+cluster. Successful existing models have employed various techniques to avoid
+this problem, most of which require data augmentation or which aim to make the
+average soft assignment across the dataset the same for each cluster. We
+propose a method that does not require data augmentation, and that, differently
+from existing methods, regularizes the hard assignments. Using a Bayesian
+framework, we derive an intuitive optimization objective that can be
+straightforwardly included in the training of the encoder network. Tested on
+four image datasets and one human-activity recognition dataset, it consistently
+avoids collapse more robustly than other methods and leads to more accurate
+clustering. We also conduct further experiments and analyses justifying our
+choice to regularize the hard cluster assignments. Code is available at
+https://github.com/Lou1sM/online_hard_clustering."
+5,Xi Ye; Guillaume-Alexandre Bilodeau,STDiff: Spatio-Temporal Diffusion for Continuous Stochastic Video Prediction,"Predicting future frames of a video is challenging because it is difficult to
+learn the uncertainty of the underlying factors influencing their contents. In
+this paper, we propose a novel video prediction model, which has
+infinite-dimensional latent variables over the spatio-temporal domain.
+Specifically, we first decompose the video motion and content information, then
+take a neural stochastic differential equation to predict the temporal motion
+information, and finally, an image diffusion model autoregressively generates
+the video frame by conditioning on the predicted motion feature and the
+previous frame. The better expressiveness and stronger stochasticity learning
+capability of our model lead to state-of-the-art video prediction performances.
+As well, our model is able to achieve temporal continuous prediction, i.e.,
+predicting in an unsupervised way the future video frames with an arbitrarily
+high frame rate. Our code is available at
+\url{https://github.com/XiYe20/STDiffProject}."
+6,Qingwen Bu; Sungrae Park; Minsoo Khang; Yichuan Cheng,"SRFormer: Text Detection Transformer with Incorporated Segmentation and
+Regression","Existing techniques for text detection can be broadly classified into two
+primary groups: segmentation-based and regression-based methods. Segmentation
+models offer enhanced robustness to font variations but require intricate
+post-processing, leading to high computational overhead. Regression-based
+methods undertake instance-aware prediction but face limitations in robustness
+and data efficiency due to their reliance on high-level representations. In our
+academic pursuit, we propose SRFormer, a unified DETR-based model with
+amalgamated Segmentation and Regression, aiming at the synergistic harnessing
+of the inherent robustness in segmentation representations, along with the
+straightforward post-processing of instance-level regression. Our empirical
+analysis indicates that favorable segmentation predictions can be obtained at
+the initial decoder layers. In light of this, we constrain the incorporation of
+segmentation branches to the first few decoder layers and employ progressive
+regression refinement in subsequent layers, achieving performance gains while
+minimizing computational load from the mask.Furthermore, we propose a
+Mask-informed Query Enhancement module. We take the segmentation result as a
+natural soft-ROI to pool and extract robust pixel representations, which are
+then employed to enhance and diversify instance queries. Extensive
+experimentation across multiple benchmarks has yielded compelling findings,
+highlighting our method's exceptional robustness, superior training and data
+efficiency, as well as its state-of-the-art performance. Our code is available
+at https://github.com/retsuh-bqw/SRFormer-Text-Det."
+7,Fuxiang Huang; Lei Zhang; Xiaowei Fu; Suqi Song,Dynamic Weighted Combiner for Mixed-Modal Image Retrieval,"Mixed-Modal Image Retrieval (MMIR) as a flexible search paradigm has
+attracted wide attention. However, previous approaches always achieve limited
+performance, due to two critical factors are seriously overlooked. 1) The
+contribution of image and text modalities is different, but incorrectly treated
+equally. 2) There exist inherent labeling noises in describing users'
+intentions with text in web datasets from diverse real-world scenarios, giving
+rise to overfitting. We propose a Dynamic Weighted Combiner (DWC) to tackle the
+above challenges, which includes three merits. First, we propose an Editable
+Modality De-equalizer (EMD) by taking into account the contribution disparity
+between modalities, containing two modality feature editors and an adaptive
+weighted combiner. Second, to alleviate labeling noises and data bias, we
+propose a dynamic soft-similarity label generator (SSG) to implicitly improve
+noisy supervision. Finally, to bridge modality gaps and facilitate similarity
+learning, we propose a CLIP-based mutual enhancement module alternately trained
+by a mixed-modality contrastive loss. Extensive experiments verify that our
+proposed model significantly outperforms state-of-the-art methods on real-world
+datasets. The source code is available at
+\url{https://github.com/fuxianghuang1/DWC}."
+8,Jichang Li; Guanbin Li; Hui Cheng; Zicheng Liao; Yizhou Yu,FedDiv: Collaborative Noise Filtering for Federated Learning with Noisy Labels,"Federated learning with noisy labels (F-LNL) aims at seeking an optimal
+server model via collaborative distributed learning by aggregating multiple
+client models trained with local noisy or clean samples. On the basis of a
+federated learning framework, recent advances primarily adopt label noise
+filtering to separate clean samples from noisy ones on each client, thereby
+mitigating the negative impact of label noise. However, these prior methods do
+not learn noise filters by exploiting knowledge across all clients, leading to
+sub-optimal and inferior noise filtering performance and thus damaging training
+stability. In this paper, we present FedDiv to tackle the challenges of F-LNL.
+Specifically, we propose a global noise filter called Federated Noise Filter
+for effectively identifying samples with noisy labels on every client, thereby
+raising stability during local training sessions. Without sacrificing data
+privacy, this is achieved by modeling the global distribution of label noise
+across all clients. Then, in an effort to make the global model achieve higher
+performance, we introduce a Predictive Consistency based Sampler to identify
+more credible local data for local model training, thus preventing noise
+memorization and further boosting the training stability. Extensive experiments
+on CIFAR-10, CIFAR-100, and Clothing1M demonstrate that \texttt{FedDiv}
+achieves superior performance over state-of-the-art F-LNL methods under
+different label noise settings for both IID and non-IID data partitions. Source
+code is publicly available at https://github.com/lijichang/FLNL-FedDiv."
+9,Fengpeng Li; Kemou Li; Jinyu Tian; Jiantao Zhou,Regroup Median Loss for Combating Label Noise,"The deep model training procedure requires large-scale datasets of annotated
+data. Due to the difficulty of annotating a large number of samples, label
+noise caused by incorrect annotations is inevitable, resulting in low model
+performance and poor model generalization. To combat label noise, current
+methods usually select clean samples based on the small-loss criterion and use
+these samples for training. Due to some noisy samples similar to clean ones,
+these small-loss criterion-based methods are still affected by label noise. To
+address this issue, in this work, we propose Regroup Median Loss (RML) to
+reduce the probability of selecting noisy samples and correct losses of noisy
+samples. RML randomly selects samples with the same label as the training
+samples based on a new loss processing method. Then, we combine the stable mean
+loss and the robust median loss through a proposed regrouping strategy to
+obtain robust loss estimation for noisy samples. To further improve the model
+performance against label noise, we propose a new sample selection strategy and
+build a semi-supervised method based on RML. Compared to state-of-the-art
+methods, for both the traditionally trained and semi-supervised models, RML
+achieves a significant improvement on synthetic and complex real-world
+datasets. The source code of the paper has been released."
+10,"Zhengze Xu; Dongyue Wu; Changqian Yu; Xiangxiang Chu; Nong Sang;
+Changxin Gao","SCTNet: Single-Branch CNN with Transformer Semantic Information for Real-
+Time Segmentation","Recent real-time semantic segmentation methods usually adopt an additional
+semantic branch to pursue rich long-range context. However, the additional
+branch incurs undesirable computational overhead and slows inference speed. To
+eliminate this dilemma, we propose SCTNet, a single branch CNN with transformer
+semantic information for real-time segmentation. SCTNet enjoys the rich
+semantic representations of an inference-free semantic branch while retaining
+the high efficiency of lightweight single branch CNN. SCTNet utilizes a
+transformer as the training-only semantic branch considering its superb ability
+to extract long-range context. With the help of the proposed transformer-like
+CNN block CFBlock and the semantic information alignment module, SCTNet could
+capture the rich semantic information from the transformer branch in training.
+During the inference, only the single branch CNN needs to be deployed. We
+conduct extensive experiments on Cityscapes, ADE20K, and COCO-Stuff-10K, and
+the results show that our method achieves the new state-of-the-art performance.
+The code and model is available at https://github.com/xzz777/SCTNet"
+11,"Minh-Quan Le; Tam V. Nguyen; Trung-Nghia Le; Thanh-Toan Do; Minh N.
+Do; Minh-Triet Tran","MaskDiff: Modeling Mask Distribution with Diffusion Probabilistic Model for Few-
+Shot Instance Segmentation","Few-shot instance segmentation extends the few-shot learning paradigm to the
+instance segmentation task, which tries to segment instance objects from a
+query image with a few annotated examples of novel categories. Conventional
+approaches have attempted to address the task via prototype learning, known as
+point estimation. However, this mechanism depends on prototypes (\eg mean of
+$K-$shot) for prediction, leading to performance instability. To overcome the
+disadvantage of the point estimation mechanism, we propose a novel approach,
+dubbed MaskDiff, which models the underlying conditional distribution of a
+binary mask, which is conditioned on an object region and $K-$shot information.
+Inspired by augmentation approaches that perturb data with Gaussian noise for
+populating low data density regions, we model the mask distribution with a
+diffusion probabilistic model. We also propose to utilize classifier-free
+guided mask sampling to integrate category information into the binary mask
+generation process. Without bells and whistles, our proposed method
+consistently outperforms state-of-the-art methods on both base and novel
+classes of the COCO dataset while simultaneously being more stable than
+existing methods. The source code is available at:
+https://github.com/minhquanlecs/MaskDiff."
+12,Xiaochen Ma; Bo Du; Zhuohang Jiang; Ahmed Alhammadi; Jizhe Zhou,IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer,"Advanced image tampering techniques are increasingly challenging the
+trustworthiness of multimedia, leading to the development of Image Manipulation
+Localization (IML). But what makes a good IML model? The answer lies in the way
+to capture artifacts. Exploiting artifacts requires the model to extract
+non-semantic discrepancies between manipulated and authentic regions,
+necessitating explicit comparisons between the two areas. With the
+self-attention mechanism, naturally, the Transformer should be a better
+candidate to capture artifacts. However, due to limited datasets, there is
+currently no pure ViT-based approach for IML to serve as a benchmark, and CNNs
+dominate the entire task. Nevertheless, CNNs suffer from weak long-range and
+non-semantic modeling. To bridge this gap, based on the fact that artifacts are
+sensitive to image resolution, amplified under multi-scale features, and
+massive at the manipulation border, we formulate the answer to the former
+question as building a ViT with high-resolution capacity, multi-scale feature
+extraction capability, and manipulation edge supervision that could converge
+with a small amount of data. We term this simple but effective ViT paradigm
+IML-ViT, which has significant potential to become a new benchmark for IML.
+Extensive experiments on five benchmark datasets verified our model outperforms
+the state-of-the-art manipulation localization methods.Code and models are
+available at \url{https://github.com/SunnyHaze/IML-ViT}."
+13,Zhiying Jiang; Xingyuan Li; Jinyuan Liu; Xin Fan; Risheng Liu,"Towards Robust Image Stitching: An Adaptive Resistance Learning against
+Compatible Attacks","Image stitching seamlessly integrates images captured from varying
+perspectives into a single wide field-of-view image. Such integration not only
+broadens the captured scene but also augments holistic perception in computer
+vision applications. Given a pair of captured images, subtle perturbations and
+distortions which go unnoticed by the human visual system tend to attack the
+correspondence matching, impairing the performance of image stitching
+algorithms. In light of this challenge, this paper presents the first attempt
+to improve the robustness of image stitching against adversarial attacks.
+Specifically, we introduce a stitching-oriented attack~(SoA), tailored to
+amplify the alignment loss within overlapping regions, thereby targeting the
+feature matching procedure. To establish an attack resistant model, we delve
+into the robustness of stitching architecture and develop an adaptive
+adversarial training~(AAT) to balance attack resistance with stitching
+precision. In this way, we relieve the gap between the routine adversarial
+training and benign models, ensuring resilience without quality compromise.
+Comprehensive evaluation across real-world and synthetic datasets validate the
+deterioration of SoA on stitching performance. Furthermore, AAT emerges as a
+more robust solution against adversarial perturbations, delivering superior
+stitching results. Code is available at:https://github.com/Jzy2017/TRIS."
+14,Roy Miles; Krystian Mikolajczyk,Understanding the Role of the Projector in Knowledge Distillation,"In this paper we revisit the efficacy of knowledge distillation as a function
+matching and metric learning problem. In doing so we verify three important
+design decisions, namely the normalisation, soft maximum function, and
+projection layers as key ingredients. We theoretically show that the projector
+implicitly encodes information on past examples, enabling relational gradients
+for the student. We then show that the normalisation of representations is
+tightly coupled with the training dynamics of this projector, which can have a
+large impact on the students performance. Finally, we show that a simple soft
+maximum function can be used to address any significant capacity gap problems.
+Experimental results on various benchmark datasets demonstrate that using these
+insights can lead to superior or comparable performance to state-of-the-art
+knowledge distillation techniques, despite being much more computationally
+efficient. In particular, we obtain these results across image classification
+(CIFAR100 and ImageNet), object detection (COCO2017), and on more difficult
+distillation objectives, such as training data efficient transformers, whereby
+we attain a 77.2% top-1 accuracy with DeiT-Ti on ImageNet. Code and models are
+publicly available."
+15,Taicai Chen; Yue Duan; Dong Li; Lei Qi; Yinghuan Shi; Yang Gao,"PG-LBO: Enhancing High-Dimensional Bayesian Optimization with Pseudo-
+Label and Gaussian Process Guidance","Variational Autoencoder based Bayesian Optimization (VAE-BO) has demonstrated
+its excellent performance in addressing high-dimensional structured
+optimization problems. However, current mainstream methods overlook the
+potential of utilizing a pool of unlabeled data to construct the latent space,
+while only concentrating on designing sophisticated models to leverage the
+labeled data. Despite their effective usage of labeled data, these methods
+often require extra network structures, additional procedure, resulting in
+computational inefficiency. To address this issue, we propose a novel method to
+effectively utilize unlabeled data with the guidance of labeled data.
+Specifically, we tailor the pseudo-labeling technique from semi-supervised
+learning to explicitly reveal the relative magnitudes of optimization objective
+values hidden within the unlabeled data. Based on this technique, we assign
+appropriate training weights to unlabeled data to enhance the construction of a
+discriminative latent space. Furthermore, we treat the VAE encoder and the
+Gaussian Process (GP) in Bayesian optimization as a unified deep kernel
+learning process, allowing the direct utilization of labeled data, which we
+term as Gaussian Process guidance. This directly and effectively integrates the
+goal of improving GP accuracy into the VAE training, thereby guiding the
+construction of the latent space. The extensive experiments demonstrate that
+our proposed method outperforms existing VAE-BO algorithms in various
+optimization scenarios. Our code will be published at
+https://github.com/TaicaiChen/PG-LBO."
+16,Youhong Wang; Yunji Liang; Hao Xu; Shaohui Jiao; Hongkai Yu,"SQLdepth: Generalizable Self-Supervised Fine-Structured Monocular Depth
+Estimation","Recently, self-supervised monocular depth estimation has gained popularity
+with numerous applications in autonomous driving and robotics. However,
+existing solutions primarily seek to estimate depth from immediate visual
+features, and struggle to recover fine-grained scene details with limited
+generalization. In this paper, we introduce SQLdepth, a novel approach that can
+effectively learn fine-grained scene structures from motion. In SQLdepth, we
+propose a novel Self Query Layer (SQL) to build a self-cost volume and infer
+depth from it, rather than inferring depth from feature maps. The self-cost
+volume implicitly captures the intrinsic geometry of the scene within a single
+frame. Each individual slice of the volume signifies the relative distances
+between points and objects within a latent space. Ultimately, this volume is
+compressed to the depth map via a novel decoding approach. Experimental results
+on KITTI and Cityscapes show that our method attains remarkable
+state-of-the-art performance (AbsRel = $0.082$ on KITTI, $0.052$ on KITTI with
+improved ground-truth and $0.106$ on Cityscapes), achieves $9.9\%$, $5.5\%$ and
+$4.5\%$ error reduction from the previous best. In addition, our approach
+showcases reduced training complexity, computational efficiency, improved
+generalization, and the ability to recover fine-grained scene details.
+Moreover, the self-supervised pre-trained and metric fine-tuned SQLdepth can
+surpass existing supervised methods by significant margins (AbsRel = $0.043$,
+$14\%$ error reduction). self-matching-oriented relative distance querying in
+SQL improves the robustness and zero-shot generalization capability of
+SQLdepth. Code and the pre-trained weights will be publicly available. Code is
+available at
+\href{https://github.com/hisfog/SQLdepth-Impl}{https://github.com/hisfog/SQLdepth-Impl}."
+17,Xiangpeng Yang; Linchao Zhu; Xiaohan Wang; Yi Yang,DGL: Dynamic Global-Local Prompt Tuning for Text-Video Retrieval,"Text-video retrieval is a critical multi-modal task to find the most relevant
+video for a text query. Although pretrained models like CLIP have demonstrated
+impressive potential in this area, the rising cost of fully finetuning these
+models due to increasing model size continues to pose a problem. To address
+this challenge, prompt tuning has emerged as an alternative. However, existing
+works still face two problems when adapting pretrained image-text models to
+downstream video-text tasks: (1) The visual encoder could only encode
+frame-level features and failed to extract global-level general video
+information. (2) Equipping the visual and text encoder with separated prompts
+failed to mitigate the visual-text modality gap. To this end, we propose DGL, a
+cross-modal Dynamic prompt tuning method with Global-Local video attention. In
+contrast to previous prompt tuning methods, we employ the shared latent space
+to generate local-level text and frame prompts that encourage inter-modal
+interaction. Furthermore, we propose modeling video in a global-local attention
+mechanism to capture global video information from the perspective of prompt
+tuning. Extensive experiments reveal that when only 0.67% parameters are tuned,
+our cross-modal prompt tuning strategy DGL outperforms or is comparable to
+fully finetuning methods on MSR-VTT, VATEX, LSMDC, and ActivityNet datasets.
+Code will be available at https://github.com/knightyxp/DGL"
+18,Xiaolong Shen; Jianxin Ma; Chang Zhou; Zongxin Yang,Controllable 3D Face Generation with Conditional Style Code Diffusion,"Generating photorealistic 3D faces from given conditions is a challenging
+task. Existing methods often rely on time-consuming one-by-one optimization
+approaches, which are not efficient for modeling the same distribution content,
+e.g., faces. Additionally, an ideal controllable 3D face generation model
+should consider both facial attributes and expressions. Thus we propose a novel
+approach called TEx-Face(TExt & Expression-to-Face) that addresses these
+challenges by dividing the task into three components, i.e., 3D GAN Inversion,
+Conditional Style Code Diffusion, and 3D Face Decoding. For 3D GAN inversion,
+we introduce two methods which aim to enhance the representation of style codes
+and alleviate 3D inconsistencies. Furthermore, we design a style code denoiser
+to incorporate multiple conditions into the style code and propose a data
+augmentation strategy to address the issue of insufficient paired
+visual-language data. Extensive experiments conducted on FFHQ, CelebA-HQ, and
+CelebA-Dialog demonstrate the promising performance of our TEx-Face in
+achieving the efficient and controllable generation of photorealistic 3D faces.
+The code will be available at https://github.com/sxl142/TEx-Face."
+19,Wenxi Yue; Jing Zhang; Kun Hu; Yong Xia; Jiebo Luo; Zhiyong Wang,SurgicalSAM: Efficient Class Promptable Surgical Instrument Segmentation,"The Segment Anything Model (SAM) is a powerful foundation model that has
+revolutionised image segmentation. To apply SAM to surgical instrument
+segmentation, a common approach is to locate precise points or boxes of
+instruments and then use them as prompts for SAM in a zero-shot manner.
+However, we observe two problems with this naive pipeline: (1) the domain gap
+between natural objects and surgical instruments leads to inferior
+generalisation of SAM; and (2) SAM relies on precise point or box locations for
+accurate segmentation, requiring either extensive manual guidance or a
+well-performing specialist detector for prompt preparation, which leads to a
+complex multi-stage pipeline. To address these problems, we introduce
+SurgicalSAM, a novel end-to-end efficient-tuning approach for SAM to
+effectively integrate surgical-specific information with SAM's pre-trained
+knowledge for improved generalisation. Specifically, we propose a lightweight
+prototype-based class prompt encoder for tuning, which directly generates
+prompt embeddings from class prototypes and eliminates the use of explicit
+prompts for improved robustness and a simpler pipeline. In addition, to address
+the low inter-class variance among surgical instrument categories, we propose
+contrastive prototype learning, further enhancing the discrimination of the
+class prototypes for more accurate class prompting. The results of extensive
+experiments on both EndoVis2018 and EndoVis2017 datasets demonstrate that
+SurgicalSAM achieves state-of-the-art performance while only requiring a small
+number of tunable parameters. The source code is available at
+https://github.com/wenxi-yue/SurgicalSAM."
+20,Adam D. Cobb; Brian Matejek; Daniel Elenius; Anirban Roy; Susmit Jha,Direct Amortized Likelihood Ratio Estimation,"We introduce a new amortized likelihood ratio estimator for likelihood-free
+simulation-based inference (SBI). Our estimator is simple to train and
+estimates the likelihood ratio using a single forward pass of the neural
+estimator. Our approach directly computes the likelihood ratio between two
+competing parameter sets which is different from the previous approach of
+comparing two neural network output values. We refer to our model as the direct
+neural ratio estimator (DNRE). As part of introducing the DNRE, we derive a
+corresponding Monte Carlo estimate of the posterior. We benchmark our new ratio
+estimator and compare to previous ratio estimators in the literature. We show
+that our new ratio estimator often outperforms these previous approaches. As a
+further contribution, we introduce a new derivative estimator for likelihood
+ratio estimators that enables us to compare likelihood-free Hamiltonian Monte
+Carlo (HMC) with random-walk Metropolis-Hastings (MH). We show that HMC is
+equally competitive, which has not been previously shown. Finally, we include a
+novel real-world application of SBI by using our neural ratio estimator to
+design a quadcopter. Code is available at https://github.com/SRI-CSL/dnre."
+21,Shipeng Zhu; Pengfei Fang; Chenjie Zhu; Zuoyan Zhao; Qiang Xu; Hui Xue,Text Image Inpainting via Global Structure-Guided Diffusion Models,"Real-world text can be damaged by corrosion issues caused by environmental or
+human factors, which hinder the preservation of the complete styles of texts,
+e.g., texture and structure. These corrosion issues, such as graffiti signs and
+incomplete signatures, bring difficulties in understanding the texts, thereby
+posing significant challenges to downstream applications, e.g., scene text
+recognition and signature identification. Notably, current inpainting
+techniques often fail to adequately address this problem and have difficulties
+restoring accurate text images along with reasonable and consistent styles.
+Formulating this as an open problem of text image inpainting, this paper aims
+to build a benchmark to facilitate its study. In doing so, we establish two
+specific text inpainting datasets which contain scene text images and
+handwritten text images, respectively. Each of them includes images revamped by
+real-life and synthetic datasets, featuring pairs of original images, corrupted
+images, and other assistant information. On top of the datasets, we further
+develop a novel neural framework, Global Structure-guided Diffusion Model
+(GSDM), as a potential solution. Leveraging the global structure of the text as
+a prior, the proposed GSDM develops an efficient diffusion model to recover
+clean texts. The efficacy of our approach is demonstrated by thorough empirical
+study, including a substantial boost in both recognition accuracy and image
+quality. These findings not only highlight the effectiveness of our method but
+also underscore its potential to enhance the broader field of text image
+understanding and processing. Code and datasets are available at:
+https://github.com/blackprotoss/GSDM."
+22,Dai Luanyuan; Xiaoyu Du; Hanwang Zhang; Jinhui Tang,MGNet: Learning Correspondences via Multiple Graphs,"Learning correspondences aims to find correct correspondences (inliers) from
+the initial correspondence set with an uneven correspondence distribution and a
+low inlier rate, which can be regarded as graph data. Recent advances usually
+use graph neural networks (GNNs) to build a single type of graph or simply
+stack local graphs into the global one to complete the task. But they ignore
+the complementary relationship between different types of graphs, which can
+effectively capture potential relationships among sparse correspondences. To
+address this problem, we propose MGNet to effectively combine multiple
+complementary graphs. To obtain information integrating implicit and explicit
+local graphs, we construct local graphs from implicit and explicit aspects and
+combine them effectively, which is used to build a global graph. Moreover, we
+propose Graph~Soft~Degree~Attention (GSDA) to make full use of all sparse
+correspondence information at once in the global graph, which can capture and
+amplify discriminative features. Extensive experiments demonstrate that MGNet
+outperforms state-of-the-art methods in different visual tasks. The code is
+provided in https://github.com/DAILUANYUAN/MGNet-2024AAAI."
+23,Hexiang Wang; Fengqi Liu; Qianyu Zhou; Ran Yi; Xin Tan; Lizhuang Ma,Continuous Piecewise-Affine Based Motion Model for Image Animation,"Image animation aims to bring static images to life according to driving
+videos and create engaging visual content that can be used for various purposes
+such as animation, entertainment, and education. Recent unsupervised methods
+utilize affine and thin-plate spline transformations based on keypoints to
+transfer the motion in driving frames to the source image. However, limited by
+the expressive power of the transformations used, these methods always produce
+poor results when the gap between the motion in the driving frame and the
+source image is large. To address this issue, we propose to model motion from
+the source image to the driving frame in highly-expressive diffeomorphism
+spaces. Firstly, we introduce Continuous Piecewise-Affine based (CPAB)
+transformation to model the motion and present a well-designed inference
+algorithm to generate CPAB transformation from control keypoints. Secondly, we
+propose a SAM-guided keypoint semantic loss to further constrain the keypoint
+extraction process and improve the semantic consistency between the
+corresponding keypoints on the source and driving images. Finally, we design a
+structure alignment loss to align the structure-related features extracted from
+driving and generated images, thus helping the generator generate results that
+are more consistent with the driving action. Extensive experiments on four
+datasets demonstrate the effectiveness of our method against state-of-the-art
+competitors quantitatively and qualitatively. Code will be publicly available
+at: https://github.com/DevilPG/AAAI2024-CPABMM."
+24,Fei Wang; Dan Guo; Kun Li; Meng Wang,"EulerMormer: Robust Eulerian Motion Magnification via Dynamic Filtering within
+Transformer","Video Motion Magnification (VMM) aims to break the resolution limit of human
+visual perception capability and reveal the imperceptible minor motion that
+contains valuable information in the macroscopic domain. However, challenges
+arise in this task due to photon noise inevitably introduced by photographic
+devices and spatial inconsistency in amplification, leading to flickering
+artifacts in static fields and motion blur and distortion in dynamic fields in
+the video. Existing methods focus on explicit motion modeling without
+emphasizing prioritized denoising during the motion magnification process. This
+paper proposes a novel dynamic filtering strategy to achieve static-dynamic
+field adaptive denoising. Specifically, based on Eulerian theory, we separate
+texture and shape to extract motion representation through inter-frame shape
+differences, expecting to leverage these subdivided features to solve this task
+finely. Then, we introduce a novel dynamic filter that eliminates noise cues
+and preserves critical features in the motion magnification and amplification
+generation phases. Overall, our unified framework, EulerMormer, is a pioneering
+effort to first equip with Transformer in learning-based VMM. The core of the
+dynamic filter lies in a global dynamic sparse cross-covariance attention
+mechanism that explicitly removes noise while preserving vital information,
+coupled with a multi-scale dual-path gating mechanism that selectively
+regulates the dependence on different frequency features to reduce spatial
+attenuation and complement motion boundaries. We demonstrate extensive
+experiments that EulerMormer achieves more robust video motion magnification
+from the Eulerian perspective, significantly outperforming state-of-the-art
+methods. The source code is available at
+https://github.com/VUT-HFUT/EulerMormer."
+25,Haozhan Shen; Tiancheng Zhao; Mingwei Zhu; Jianwei Yin,"GroundVLP: Harnessing Zero-Shot Visual Grounding from Vision-Language Pre-
+training and Open-Vocabulary Object Detection","Visual grounding, a crucial vision-language task involving the understanding
+of the visual context based on the query expression, necessitates the model to
+capture the interactions between objects, as well as various spatial and
+attribute information. However, the annotation data of visual grounding task is
+limited due to its time-consuming and labor-intensive annotation process,
+resulting in the trained models being constrained from generalizing its
+capability to a broader domain. To address this challenge, we propose
+GroundVLP, a simple yet effective zero-shot method that harnesses visual
+grounding ability from the existing models trained from image-text pairs and
+pure object detection data, both of which are more conveniently obtainable and
+offer a broader domain compared to visual grounding annotation data. GroundVLP
+proposes a fusion mechanism that combines the heatmap from GradCAM and the
+object proposals of open-vocabulary detectors. We demonstrate that the proposed
+method significantly outperforms other zero-shot methods on RefCOCO/+/g
+datasets, surpassing prior zero-shot state-of-the-art by approximately 28\% on
+the test split of RefCOCO and RefCOCO+. Furthermore, GroundVLP performs
+comparably to or even better than some non-VLP-based supervised models on the
+Flickr30k entities dataset. Our code is available at
+https://github.com/om-ai-lab/GroundVLP."
+26,Jun Liu; Jiantao Zhou; Jiandian Zeng; Jinyu Tian,"DifAttack: Query-Efficient Black-Box Adversarial Attack via Disentangled Feature
+Space","This work investigates efficient score-based black-box adversarial attacks
+with a high Attack Success Rate (ASR) and good generalizability. We design a
+novel attack method based on a Disentangled Feature space, called DifAttack,
+which differs significantly from the existing ones operating over the entire
+feature space. Specifically, DifAttack firstly disentangles an image's latent
+feature into an adversarial feature and a visual feature, where the former
+dominates the adversarial capability of an image, while the latter largely
+determines its visual appearance. We train an autoencoder for the
+disentanglement by using pairs of clean images and their Adversarial Examples
+(AEs) generated from available surrogate models via white-box attack methods.
+Eventually, DifAttack iteratively optimizes the adversarial feature according
+to the query feedback from the victim model until a successful AE is generated,
+while keeping the visual feature unaltered. In addition, due to the avoidance
+of using surrogate models' gradient information when optimizing AEs for
+black-box models, our proposed DifAttack inherently possesses better attack
+capability in the open-set scenario, where the training dataset of the victim
+model is unknown. Extensive experimental results demonstrate that our method
+achieves significant improvements in ASR and query efficiency simultaneously,
+especially in the targeted attack and open-set scenarios. The code is available
+at https://github.com/csjunjun/DifAttack.git."
+27,Xinyao Li; Jingjing Li; Fengling Li; Lei Zhu; Ke Lu,Agile Multi-Source-Free Domain Adaptation,"Efficiently utilizing rich knowledge in pretrained models has become a
+critical topic in the era of large models. This work focuses on adaptively
+utilizing knowledge from multiple source-pretrained models to an unlabeled
+target domain without accessing the source data. Despite being a practically
+useful setting, existing methods require extensive parameter tuning over each
+source model, which is computationally expensive when facing abundant source
+domains or larger source models. To address this challenge, we propose a novel
+approach which is free of the parameter tuning over source backbones. Our
+technical contribution lies in the Bi-level ATtention ENsemble (Bi-ATEN)
+module, which learns both intra-domain weights and inter-domain ensemble
+weights to achieve a fine balance between instance specificity and domain
+consistency. By slightly tuning source bottlenecks, we achieve comparable or
+even superior performance on a challenging benchmark DomainNet with less than
+3% trained parameters and 8 times of throughput compared with SOTA method.
+Furthermore, with minor modifications, the proposed module can be easily
+equipped to existing methods and gain more than 4% performance boost. Code is
+available at https://github.com/TL-UESTC/Bi-ATEN."
+28,Zhangkai Ni; Peiqi Yang; Wenhan Yang; Hanli Wang; Lin Ma; Sam Kwong,ColNeRF: Collaboration for Generalizable Sparse Input Neural Radiance Field,"Neural Radiance Fields (NeRF) have demonstrated impressive potential in
+synthesizing novel views from dense input, however, their effectiveness is
+challenged when dealing with sparse input. Existing approaches that incorporate
+additional depth or semantic supervision can alleviate this issue to an extent.
+However, the process of supervision collection is not only costly but also
+potentially inaccurate, leading to poor performance and generalization ability
+in diverse scenarios. In our work, we introduce a novel model: the
+Collaborative Neural Radiance Fields (ColNeRF) designed to work with sparse
+input. The collaboration in ColNeRF includes both the cooperation between
+sparse input images and the cooperation between the output of the neural
+radiation field. Through this, we construct a novel collaborative module that
+aligns information from various views and meanwhile imposes self-supervised
+constraints to ensure multi-view consistency in both geometry and appearance. A
+Collaborative Cross-View Volume Integration module (CCVI) is proposed to
+capture complex occlusions and implicitly infer the spatial location of
+objects. Moreover, we introduce self-supervision of target rays projected in
+multiple directions to ensure geometric and color consistency in adjacent
+regions. Benefiting from the collaboration at the input and output ends,
+ColNeRF is capable of capturing richer and more generalized scene
+representation, thereby facilitating higher-quality results of the novel view
+synthesis. Extensive experiments demonstrate that ColNeRF outperforms
+state-of-the-art sparse input generalizable NeRF methods. Furthermore, our
+approach exhibits superiority in fine-tuning towards adapting to new scenes,
+achieving competitive performance compared to per-scene optimized NeRF-based
+methods while significantly reducing computational costs. Our code is available
+at: https://github.com/eezkni/ColNeRF."
+29,Chenyang Yu; Xuehu Liu; Yingquan Wang; Pingping Zhang; Huchuan Lu,TF-CLIP: Learning Text-Free CLIP for Video-Based Person Re-identification,"Large-scale language-image pre-trained models (e.g., CLIP) have shown
+superior performances on many cross-modal retrieval tasks. However, the problem
+of transferring the knowledge learned from such models to video-based person
+re-identification (ReID) has barely been explored. In addition, there is a lack
+of decent text descriptions in current ReID benchmarks. To address these
+issues, in this work, we propose a novel one-stage text-free CLIP-based
+learning framework named TF-CLIP for video-based person ReID. More
+specifically, we extract the identity-specific sequence feature as the
+CLIP-Memory to replace the text feature. Meanwhile, we design a
+Sequence-Specific Prompt (SSP) module to update the CLIP-Memory online. To
+capture temporal information, we further propose a Temporal Memory Diffusion
+(TMD) module, which consists of two key components: Temporal Memory
+Construction (TMC) and Memory Diffusion (MD). Technically, TMC allows the
+frame-level memories in a sequence to communicate with each other, and to
+extract temporal information based on the relations within the sequence. MD
+further diffuses the temporal memories to each token in the original features
+to obtain more robust sequence features. Extensive experiments demonstrate that
+our proposed method shows much better results than other state-of-the-art
+methods on MARS, LS-VID and iLIDS-VID. The code is available at
+https://github.com/AsuradaYuci/TF-CLIP."
+30,Olaf Beyersdorff; Benjamin Böhm; Meena Mahajan,Runtime vs. Extracted Proof Size: An Exponential Gap for CDCL on QBFs,"Using online Q&A forums, such as Stack Overflow (SO), for guidance to resolve
+program bugs, among other development issues, is commonplace in modern software
+development practice. Runtime exceptions (RE) is one such important class of
+bugs that is actively discussed on SO. In this work we present a technique and
+prototype tool called MAESTRO that can automatically recommend an SO post that
+is most relevant to a given Java RE in a developer's code. MAESTRO compares the
+exception-generating program scenario in the developer's code with that
+discussed in an SO post and returns the post with the closest match. To extract
+and compare the exception scenario effectively, MAESTRO first uses the answer
+code snippets in a post to implicate a subset of lines in the post's question
+code snippet as responsible for the exception and then compares these lines
+with the developer's code in terms of their respective Abstract Program Graph
+(APG) representations. The APG is a simplified and abstracted derivative of an
+abstract syntax tree, proposed in this work, that allows an effective
+comparison of the functionality embodied in the high-level program structure,
+while discarding many of the low-level syntactic or semantic differences. We
+evaluate MAESTRO on a benchmark of 78 instances of Java REs extracted from the
+top 500 Java projects on GitHub and show that MAESTRO can return either a
+highly relevant or somewhat relevant SO post corresponding to the exception
+instance in 71% of the cases, compared to relevant posts returned in only 8% -
+44% instances, by four competitor tools based on state-of-the-art techniques.
+We also conduct a user experience study of MAESTRO with 10 Java developers,
+where the participants judge MAESTRO reporting a highly relevant or somewhat
+relevant post in 80% of the instances. In some cases the post is judged to be
+even better than the one manually found by the participant."
+31,"Haoyang He; Jiangning Zhang; Hongxu Chen; Xuhai Chen; Zhishan Li; Xu
+Chen; Yabiao Wang; Chengjie Wang; Lei Xie",A Diffusion-Based Framework for Multi-Class Anomaly Detection,"Reconstruction-based approaches have achieved remarkable outcomes in anomaly
+detection. The exceptional image reconstruction capabilities of recently
+popular diffusion models have sparked research efforts to utilize them for
+enhanced reconstruction of anomalous images. Nonetheless, these methods might
+face challenges related to the preservation of image categories and pixel-wise
+structural integrity in the more practical multi-class setting. To solve the
+above problems, we propose a Difusion-based Anomaly Detection (DiAD) framework
+for multi-class anomaly detection, which consists of a pixel-space autoencoder,
+a latent-space Semantic-Guided (SG) network with a connection to the stable
+diffusion's denoising network, and a feature-space pre-trained feature
+extractor. Firstly, The SG network is proposed for reconstructing anomalous
+regions while preserving the original image's semantic information. Secondly,
+we introduce Spatial-aware Feature Fusion (SFF) block to maximize
+reconstruction accuracy when dealing with extensively reconstructed areas.
+Thirdly, the input and reconstructed images are processed by a pre-trained
+feature extractor to generate anomaly maps based on features extracted at
+different scales. Experiments on MVTec-AD and VisA datasets demonstrate the
+effectiveness of our approach which surpasses the state-of-the-art methods,
+e.g., achieving 96.8/52.6 and 97.2/99.0 (AUROC/AP) for localization and
+detection respectively on multi-class MVTec-AD dataset. Code will be available
+at https://lewandofskee.github.io/projects/diad."
+32,Sang-Heon Shim; Jiwoo Chung; Jae-Pil Heo,Towards Squeezing-Averse Virtual Try-On via Sequential Deformation,"In this paper, we first investigate a visual quality degradation problem
+observed in recent high-resolution virtual try-on approach. The tendency is
+empirically found that the textures of clothes are squeezed at the sleeve, as
+visualized in the upper row of Fig.1(a). A main reason for the issue arises
+from a gradient conflict between two popular losses, the Total Variation (TV)
+and adversarial losses. Specifically, the TV loss aims to disconnect boundaries
+between the sleeve and torso in a warped clothing mask, whereas the adversarial
+loss aims to combine between them. Such contrary objectives feedback the
+misaligned gradients to a cascaded appearance flow estimation, resulting in
+undesirable squeezing artifacts. To reduce this, we propose a Sequential
+Deformation (SD-VITON) that disentangles the appearance flow prediction layers
+into TV objective-dominant (TVOB) layers and a task-coexistence (TACO) layer.
+Specifically, we coarsely fit the clothes onto a human body via the TVOB
+layers, and then keep on refining via the TACO layer. In addition, the bottom
+row of Fig.1(a) shows a different type of squeezing artifacts around the waist.
+To address it, we further propose that we first warp the clothes into a
+tucked-out shirts style, and then partially erase the texture from the warped
+clothes without hurting the smoothness of the appearance flows. Experimental
+results show that our SD-VITON successfully resolves both types of artifacts
+and outperforms the baseline methods. Source code will be available at
+https://github.com/SHShim0513/SD-VITON."
+33,Shenghe Zheng; Hongzhi Wang; Tianyu Mu,DCLP: Neural Architecture Predictor with Curriculum Contrastive Learning,"Neural predictors have shown great potential in the evaluation process of
+neural architecture search (NAS). However, current predictor-based approaches
+overlook the fact that training a predictor necessitates a considerable number
+of trained neural networks as the labeled training set, which is costly to
+obtain. Therefore, the critical issue in utilizing predictors for NAS is to
+train a high-performance predictor using as few trained neural networks as
+possible. Although some methods attempt to address this problem through
+unsupervised learning, they often result in inaccurate predictions. We argue
+that the unsupervised tasks intended for the common graph data are too
+challenging for neural networks, causing unsupervised training to be
+susceptible to performance crashes in NAS. To address this issue, we propose a
+Curricumum-guided Contrastive Learning framework for neural Predictor (DCLP).
+Our method simplifies the contrastive task by designing a novel curriculum to
+enhance the stability of unlabeled training data distribution during
+contrastive training. Specifically, we propose a scheduler that ranks the
+training data according to the contrastive difficulty of each data and then
+inputs them to the contrastive learner in order. This approach concentrates the
+training data distribution and makes contrastive training more efficient. By
+using our method, the contrastive learner incrementally learns feature
+representations via unsupervised data on a smooth learning curve, avoiding
+performance crashes that may occur with excessively variable training data
+distributions. We experimentally demonstrate that DCLP has high accuracy and
+efficiency compared with existing predictors, and shows promising potential to
+discover superior architectures in various search spaces when combined with
+search strategies. Our code is available at:
+https://github.com/Zhengsh123/DCLP."
+34,Jianqing Zhang; Yang Liu; Yang Hua; Jian Cao,FedTGP: Trainable Global Prototypes with Adaptive-Margin-Enhanced Contrastive Learning for Data and Model Heterogeneity in Federated Learning,"Recently, Heterogeneous Federated Learning (HtFL) has attracted attention due
+to its ability to support heterogeneous models and data. To reduce the high
+communication cost of transmitting model parameters, a major challenge in HtFL,
+prototype-based HtFL methods are proposed to solely share class
+representatives, a.k.a, prototypes, among heterogeneous clients while
+maintaining the privacy of clients' models. However, these prototypes are
+naively aggregated into global prototypes on the server using weighted
+averaging, resulting in suboptimal global knowledge which negatively impacts
+the performance of clients. To overcome this challenge, we introduce a novel
+HtFL approach called FedTGP, which leverages our Adaptive-margin-enhanced
+Contrastive Learning (ACL) to learn Trainable Global Prototypes (TGP) on the
+server. By incorporating ACL, our approach enhances prototype separability
+while preserving semantic meaning. Extensive experiments with twelve
+heterogeneous models demonstrate that our FedTGP surpasses state-of-the-art
+methods by up to 9.08% in accuracy while maintaining the communication and
+privacy advantages of prototype-based HtFL. Our code is available at
+https://github.com/TsingZ0/FedTGP."
+35,Eric Xing; Saranya Venkatraman; Thai Le; Dongwon Lee,ALISON: Fast and Effective Stylometric Authorship Obfuscation,"Authorship Attribution (AA) and Authorship Obfuscation (AO) are two competing
+tasks of increasing importance in privacy research. Modern AA leverages an
+author's consistent writing style to match a text to its author using an AA
+classifier. AO is the corresponding adversarial task, aiming to modify a text
+in such a way that its semantics are preserved, yet an AA model cannot
+correctly infer its authorship. To address privacy concerns raised by
+state-of-the-art (SOTA) AA methods, new AO methods have been proposed but
+remain largely impractical to use due to their prohibitively slow training and
+obfuscation speed, often taking hours. To this challenge, we propose a
+practical AO method, ALISON, that (1) dramatically reduces training/obfuscation
+time, demonstrating more than 10x faster obfuscation than SOTA AO methods, (2)
+achieves better obfuscation success through attacking three transformer-based
+AA methods on two benchmark datasets, typically performing 15% better than
+competing methods, (3) does not require direct signals from a target AA
+classifier during obfuscation, and (4) utilizes unique stylometric features,
+allowing sound model interpretation for explainable obfuscation. We also
+demonstrate that ALISON can effectively prevent four SOTA AA methods from
+accurately determining the authorship of ChatGPT-generated texts, all while
+minimally changing the original text semantics. To ensure the reproducibility
+of our findings, our code and data are available at:
+https://github.com/EricX003/ALISON."
+36,Zixian Su; Jingwei Guo; Kai Yao; Xi Yang; Qiufeng Wang; Kaizhu Huang,Unraveling Batch Normalization for Realistic Test-Time Adaptation,"While recent test-time adaptations exhibit efficacy by adjusting batch
+normalization to narrow domain disparities, their effectiveness diminishes with
+realistic mini-batches due to inaccurate target estimation. As previous
+attempts merely introduce source statistics to mitigate this issue, the
+fundamental problem of inaccurate target estimation still persists, leaving the
+intrinsic test-time domain shifts unresolved. This paper delves into the
+problem of mini-batch degradation. By unraveling batch normalization, we
+discover that the inexact target statistics largely stem from the substantially
+reduced class diversity in batch. Drawing upon this insight, we introduce a
+straightforward tool, Test-time Exponential Moving Average (TEMA), to bridge
+the class diversity gap between training and testing batches. Importantly, our
+TEMA adaptively extends the scope of typical methods beyond the current batch
+to incorporate a diverse set of class information, which in turn boosts an
+accurate target estimation. Built upon this foundation, we further design a
+novel layer-wise rectification strategy to consistently promote test-time
+performance. Our proposed method enjoys a unique advantage as it requires
+neither training nor tuning parameters, offering a truly hassle-free solution.
+It significantly enhances model robustness against shifted domains and
+maintains resilience in diverse real-world scenarios with various batch sizes,
+achieving state-of-the-art performance on several major benchmarks. Code is
+available at \url{https://github.com/kiwi12138/RealisticTTA}."
+37,Gang Wu; Junjun Jiang; Kui Jiang; Xianming Liu,"Learning from History: Task-agnostic Model Contrastive Learning for Image
+Restoration","Contrastive learning has emerged as a prevailing paradigm for high-level
+vision tasks, which, by introducing properly negative samples, has also been
+exploited for low-level vision tasks to achieve a compact optimization space to
+account for their ill-posed nature. However, existing methods rely on manually
+predefined and task-oriented negatives, which often exhibit pronounced
+task-specific biases. To address this challenge, our paper introduces an
+innovative method termed 'learning from history', which dynamically generates
+negative samples from the target model itself. Our approach, named Model
+Contrastive Learning for Image Restoration (MCLIR), rejuvenates latency models
+as negative models, making it compatible with diverse image restoration tasks.
+We propose the Self-Prior guided Negative loss (SPN) to enable it. This
+approach significantly enhances existing models when retrained with the
+proposed model contrastive paradigm. The results show significant improvements
+in image restoration across various tasks and architectures. For example,
+models retrained with SPN outperform the original FFANet and DehazeFormer by
+3.41 dB and 0.57 dB on the RESIDE indoor dataset for image dehazing. Similarly,
+they achieve notable improvements of 0.47 dB on SPA-Data over IDT for image
+deraining and 0.12 dB on Manga109 for a 4x scale super-resolution over
+lightweight SwinIR, respectively. Code and retrained models are available at
+https://github.com/Aitical/MCLIR."
+38,Lei Wang; Yi Hu; Jiabang He; Xing Xu; Ning Liu; Hui Liu; Heng Tao Shen,"T-SciQ: Teaching Multimodal Chain-of-Thought Reasoning via Large Language
+Model Signals for Science Question Answering","Large Language Models (LLMs) have recently demonstrated exceptional
+performance in various Natural Language Processing (NLP) tasks. They have also
+shown the ability to perform chain-of-thought (CoT) reasoning to solve complex
+problems. Recent studies have explored CoT reasoning in complex multimodal
+scenarios, such as the science question answering task, by fine-tuning
+multimodal models with high-quality human-annotated CoT rationales. However,
+collecting high-quality COT rationales is usually time-consuming and costly.
+Besides, the annotated rationales are hardly accurate due to the external
+essential information missed. To address these issues, we propose a novel
+method termed T-SciQ that aims at teaching science question answering with LLM
+signals. The T-SciQ approach generates high-quality CoT rationales as teaching
+signals and is advanced to train much smaller models to perform CoT reasoning
+in complex modalities. Additionally, we introduce a novel data mixing strategy
+to produce more effective teaching data samples for simple and complex science
+question answer problems. Extensive experimental results show that our T-SciQ
+method achieves a new state-of-the-art performance on the ScienceQA benchmark,
+with an accuracy of 96.18%. Moreover, our approach outperforms the most
+powerful fine-tuned baseline by 4.5%. The code is publicly available at
+https://github.com/T-SciQ/T-SciQ."
+39,Sunoh Kim; Jungchan Cho; Joonsang Yu; YoungJoon Yoo; Jin Young Choi,"Gaussian Mixture Proposals with Pull-Push Learning Scheme to Capture Diverse
+Events for Weakly Supervised Temporal Video Grounding","In the weakly supervised temporal video grounding study, previous methods use
+predetermined single Gaussian proposals which lack the ability to express
+diverse events described by the sentence query. To enhance the expression
+ability of a proposal, we propose a Gaussian mixture proposal (GMP) that can
+depict arbitrary shapes by learning importance, centroid, and range of every
+Gaussian in the mixture. In learning GMP, each Gaussian is not trained in a
+feature space but is implemented over a temporal location. Thus the
+conventional feature-based learning for Gaussian mixture model is not valid for
+our case. In our special setting, to learn moderately coupled Gaussian mixture
+capturing diverse events, we newly propose a pull-push learning scheme using
+pulling and pushing losses, each of which plays an opposite role to the other.
+The effects of components in our scheme are verified in-depth with extensive
+ablation studies and the overall scheme achieves state-of-the-art performance.
+Our code is available at https://github.com/sunoh-kim/pps."
+40,Zhanfeng Liao; Yan Liu; Qian Zheng; Gang Pan,"Spiking NeRF: Representing the Real-World Geometry by a Discontinuous
+Representation","A crucial reason for the success of existing NeRF-based methods is to build a
+neural density field for the geometry representation via multiple perceptron
+layers (MLPs). MLPs are continuous functions, however, real geometry or density
+field is frequently discontinuous at the interface between the air and the
+surface. Such a contrary brings the problem of unfaithful geometry
+representation. To this end, this paper proposes spiking NeRF, which leverages
+spiking neurons and a hybrid Artificial Neural Network (ANN)-Spiking Neural
+Network (SNN) framework to build a discontinuous density field for faithful
+geometry representation. Specifically, we first demonstrate the reason why
+continuous density fields will bring inaccuracy. Then, we propose to use the
+spiking neurons to build a discontinuous density field. We conduct a
+comprehensive analysis for the problem of existing spiking neuron models and
+then provide the numerical relationship between the parameter of the spiking
+neuron and the theoretical accuracy of geometry. Based on this, we propose a
+bounded spiking neuron to build the discontinuous density field. Our method
+achieves SOTA performance. The source code and the supplementary material are
+available at https://github.com/liaozhanfeng/Spiking-NeRF."
+41,Shiyu Xuan; Shiliang Zhang,Decoupled Contrastive Learning for Long-Tailed Recognition,"Supervised Contrastive Loss (SCL) is popular in visual representation
+learning. Given an anchor image, SCL pulls two types of positive samples, i.e.,
+its augmentation and other images from the same class together, while pushes
+negative images apart to optimize the learned embedding. In the scenario of
+long-tailed recognition, where the number of samples in each class is
+imbalanced, treating two types of positive samples equally leads to the biased
+optimization for intra-category distance. In addition, similarity relationship
+among negative samples, that are ignored by SCL, also presents meaningful
+semantic cues. To improve the performance on long-tailed recognition, this
+paper addresses those two issues of SCL by decoupling the training objective.
+Specifically, it decouples two types of positives in SCL and optimizes their
+relations toward different objectives to alleviate the influence of the
+imbalanced dataset. We further propose a patch-based self distillation to
+transfer knowledge from head to tail classes to relieve the
+under-representation of tail classes. It uses patch-based features to mine
+shared visual patterns among different instances and leverages a self
+distillation procedure to transfer such knowledge. Experiments on different
+long-tailed classification benchmarks demonstrate the superiority of our
+method. For instance, it achieves the 57.7% top-1 accuracy on the ImageNet-LT
+dataset. Combined with the ensemble-based method, the performance can be
+further boosted to 59.7%, which substantially outperforms many recent works.
+The code is available at https://github.com/SY-Xuan/DSCL."
+42,Yinqiao Wang; Hao Xu; Pheng-Ann Heng; Chi-Wing Fu,"SiMA-Hand: Boosting 3D Hand-Mesh Reconstruction by Single-to-Multi-View
+Adaptation","Estimating 3D hand mesh from RGB images is a longstanding track, in which
+occlusion is one of the most challenging problems. Existing attempts towards
+this task often fail when the occlusion dominates the image space. In this
+paper, we propose SiMA-Hand, aiming to boost the mesh reconstruction
+performance by Single-to-Multi-view Adaptation. First, we design a multi-view
+hand reconstructor to fuse information across multiple views by holistically
+adopting feature fusion at image, joint, and vertex levels. Then, we introduce
+a single-view hand reconstructor equipped with SiMA. Though taking only one
+view as input at inference, the shape and orientation features in the
+single-view reconstructor can be enriched by learning non-occluded knowledge
+from the extra views at training, enhancing the reconstruction precision on the
+occluded regions. We conduct experiments on the Dex-YCB and HanCo benchmarks
+with challenging object- and self-caused occlusion cases, manifesting that
+SiMA-Hand consistently achieves superior performance over the state of the
+arts. Code will be released on https://github.com/JoyboyWang/SiMA-Hand Pytorch."
+43,Xiaohan Cui; Long Ma; Tengyu Ma; Jinyuan Liu; Xin Fan; Risheng Liu,"Trash to Treasure: Low-Light Object Detection via Decomposition-and-
+Aggregation","Object detection in low-light scenarios has attracted much attention in the
+past few years. A mainstream and representative scheme introduces enhancers as
+the pre-processing for regular detectors. However, because of the disparity in
+task objectives between the enhancer and detector, this paradigm cannot shine
+at its best ability. In this work, we try to arouse the potential of enhancer +
+detector. Different from existing works, we extend the illumination-based
+enhancers (our newly designed or existing) as a scene decomposition module,
+whose removed illumination is exploited as the auxiliary in the detector for
+extracting detection-friendly features. A semantic aggregation module is
+further established for integrating multi-scale scene-related semantic
+information in the context space. Actually, our built scheme successfully
+transforms the ""trash"" (i.e., the ignored illumination in the detector) into
+the ""treasure"" for the detector. Plenty of experiments are conducted to reveal
+our superiority against other state-of-the-art methods. The code will be public
+if it is accepted."
+44,Yixin Liu; Kaidi Xu; Xun Chen; Lichao Sun,"Stable Unlearnable Example: Enhancing the Robustness of Unlearnable
+Examples via Stable Error-Minimizing Noise","The open source of large amounts of image data promotes the development of
+deep learning techniques. Along with this comes the privacy risk of these
+open-source image datasets being exploited by unauthorized third parties to
+train deep learning models for commercial or illegal purposes. To avoid the
+abuse of public data, a poisoning-based technique, the unlearnable example, is
+proposed to significantly degrade the generalization performance of models by
+adding a kind of imperceptible noise to the data. To further enhance its
+robustness against adversarial training, existing works leverage iterative
+adversarial training on both the defensive noise and the surrogate model.
+However, it still remains unknown whether the robustness of unlearnable
+examples primarily comes from the effect of enhancement in the surrogate model
+or the defensive noise. Observing that simply removing the adversarial noise on
+the training process of the defensive noise can improve the performance of
+robust unlearnable examples, we identify that solely the surrogate model's
+robustness contributes to the performance. Furthermore, we found a negative
+correlation exists between the robustness of defensive noise and the protection
+performance, indicating defensive noise's instability issue. Motivated by this,
+to further boost the robust unlearnable example, we introduce stable
+error-minimizing noise (SEM), which trains the defensive noise against random
+perturbation instead of the time-consuming adversarial perturbation to improve
+the stability of defensive noise. Through extensive experiments, we demonstrate
+that SEM achieves a new state-of-the-art performance on CIFAR-10, CIFAR-100,
+and ImageNet Subset in terms of both effectiveness and efficiency. The code is
+available at https://github.com/liuyixin-louis/Stable-Unlearnable-Example."
+45,Yaokun Yang; Yihan Yin; Feng Lu,Gaze Target Detection by Merging Human Attention and Activity Cues,"Gaze estimation methods learn eye gaze from facial features. However, among
+rich information in the facial image, real gaze-relevant features only
+correspond to subtle changes in eye region, while other gaze-irrelevant
+features like illumination, personal appearance and even facial expression may
+affect the learning in an unexpected way. This is a major reason why existing
+methods show significant performance degradation in cross-domain/dataset
+evaluation. In this paper, we tackle the cross-domain problem in gaze
+estimation. Different from common domain adaption methods, we propose a domain
+generalization method to improve the cross-domain performance without touching
+target samples. The domain generalization is realized by gaze feature
+purification. We eliminate gaze-irrelevant factors such as illumination and
+identity to improve the cross-domain performance. We design a plug-and-play
+self-adversarial framework for the gaze feature purification. The framework
+enhances not only our baseline but also existing gaze estimation methods
+directly and significantly. To the best of our knowledge, we are the first to
+propose domain generalization methods in gaze estimation. Our method achieves
+not only state-of-the-art performance among typical gaze estimation methods but
+also competitive results among domain adaption methods. The code is released in
+https://github.com/yihuacheng/PureGaze."
+46,Xuanhua He; Tao Hu; Guoli Wang; Zejin Wang; Run Wang; Qian Zhang; Keyu Yan; Ziyi Chen; Rui Li; Chengjun Xie; Jie Zhang; Man Zhou,Enhancing RAW-to-sRGB with Decoupled Style Structure in Fourier Domain,"RAW to sRGB mapping, which aims to convert RAW images from smartphones into
+RGB form equivalent to that of Digital Single-Lens Reflex (DSLR) cameras, has
+become an important area of research. However, current methods often ignore the
+difference between cell phone RAW images and DSLR camera RGB images, a
+difference that goes beyond the color matrix and extends to spatial structure
+due to resolution variations. Recent methods directly rebuild color mapping and
+spatial structure via shared deep representation, limiting optimal performance.
+Inspired by Image Signal Processing (ISP) pipeline, which distinguishes image
+restoration and enhancement, we present a novel Neural ISP framework, named
+FourierISP. This approach breaks the image down into style and structure within
+the frequency domain, allowing for independent optimization. FourierISP is
+comprised of three subnetworks: Phase Enhance Subnet for structural refinement,
+Amplitude Refine Subnet for color learning, and Color Adaptation Subnet for
+blending them in a smooth manner. This approach sharpens both color and
+structure, and extensive evaluations across varied datasets confirm that our
+approach realizes state-of-the-art results. Code will be available at
+~\url{https://github.com/alexhe101/FourierISP}."
+47,Emily McMilin,"Underspecification in Language Modeling Tasks: A Causality-Informed Study of
+Gendered Pronoun Resolution","Modern language modeling tasks are often underspecified: for a given token
+prediction, many words may satisfy the user's intent of producing natural
+language at inference time, however only one word will minimize the task's loss
+function at training time. We introduce a simple causal mechanism to describe
+the role underspecification plays in the generation of spurious correlations.
+Despite its simplicity, our causal model directly informs the development of
+two lightweight black-box evaluation methods, that we apply to gendered pronoun
+resolution tasks on a wide range of LLMs to 1) aid in the detection of
+inference-time task underspecification by exploiting 2) previously unreported
+gender vs. time and gender vs. location spurious correlations on LLMs with a
+range of A) sizes: from BERT-base to GPT-4 Turbo Preview, B) pre-training
+objectives: from masked & autoregressive language modeling to a mixture of
+these objectives, and C) training stages: from pre-training only to
+reinforcement learning from human feedback (RLHF). Code and open-source demos
+available at https://github.com/2dot71mily/uspec."
+48,Xiaopeng Li; Shasha Li; Shezheng Song; Yang Jing; Jun Ma; Jie Yu,PMET: Precise Model Editing in a Transformer,"Model editing techniques modify a minor proportion of knowledge in Large
+Language Models (LLMs) at a relatively low cost, which have demonstrated
+notable success. Existing methods assume Transformer Layer (TL) hidden states
+are values of key-value memories of the Feed-Forward Network (FFN). They
+usually optimize the TL hidden states to memorize target knowledge and use it
+to update the weights of the FFN in LLMs. However, the information flow of TL
+hidden states comes from three parts: Multi-Head Self-Attention (MHSA), FFN,
+and residual connections. Existing methods neglect the fact that the TL hidden
+states contains information not specifically required for FFN. Consequently,
+the performance of model editing decreases. To achieve more precise model
+editing, we analyze hidden states of MHSA and FFN, finding that MHSA encodes
+certain general knowledge extraction patterns. This implies that MHSA weights
+do not require updating when new knowledge is introduced. Based on above
+findings, we introduce PMET, which simultaneously optimizes Transformer
+Component (TC, namely MHSA and FFN) hidden states, while only using the
+optimized TC hidden states of FFN to precisely update FFN weights. Our
+experiments demonstrate that PMET exhibits state-of-the-art performance on both
+the COUNTERFACT and zsRE datasets. Our ablation experiments substantiate the
+effectiveness of our enhancements, further reinforcing the finding that the
+MHSA encodes certain general knowledge extraction patterns and indicating its
+storage of a small amount of factual knowledge. Our code is available at
+https://github.com/xpq-tech/PMET."
+49,Qibin He,Prompting Multi-Modal Image Segmentation with Semantic Grouping,"Zero-shot anomaly detection (ZSAD) requires detection models trained using
+auxiliary data to detect anomalies without any training sample in a target
+dataset. It is a crucial task when training data is not accessible due to
+various concerns, eg, data privacy, yet it is challenging since the models need
+to generalize to anomalies across different domains where the appearance of
+foreground objects, abnormal regions, and background features, such as
+defects/tumors on different products/organs, can vary significantly. Recently
+large pre-trained vision-language models (VLMs), such as CLIP, have
+demonstrated strong zero-shot recognition ability in various vision tasks,
+including anomaly detection. However, their ZSAD performance is weak since the
+VLMs focus more on modeling the class semantics of the foreground objects
+rather than the abnormality/normality in the images. In this paper we introduce
+a novel approach, namely AnomalyCLIP, to adapt CLIP for accurate ZSAD across
+different domains. The key insight of AnomalyCLIP is to learn object-agnostic
+text prompts that capture generic normality and abnormality in an image
+regardless of its foreground objects. This allows our model to focus on the
+abnormal image regions rather than the object semantics, enabling generalized
+normality and abnormality recognition on diverse types of objects. Large-scale
+experiments on 17 real-world anomaly detection datasets show that AnomalyCLIP
+achieves superior zero-shot performance of detecting and segmenting anomalies
+in datasets of highly diverse class semantics from various defect inspection
+and medical imaging domains. Code will be made available at
+https://github.com/zqhang/AnomalyCLIP."
+50,Congzhi Zhang; Linhai Zhang; Deyu Zhou,Causal Walk: Debiasing Multi-Hop Fact Verification with Front-Door Adjustment,"Conventional multi-hop fact verification models are prone to rely on spurious
+correlations from the annotation artifacts, leading to an obvious performance
+decline on unbiased datasets. Among the various debiasing works, the causal
+inference-based methods become popular by performing theoretically guaranteed
+debiasing such as casual intervention or counterfactual reasoning. However,
+existing causal inference-based debiasing methods, which mainly formulate fact
+verification as a single-hop reasoning task to tackle shallow bias patterns,
+cannot deal with the complicated bias patterns hidden in multiple hops of
+evidence. To address the challenge, we propose Causal Walk, a novel method for
+debiasing multi-hop fact verification from a causal perspective with front-door
+adjustment. Specifically, in the structural causal model, the reasoning path
+between the treatment (the input claim-evidence graph) and the outcome (the
+veracity label) is introduced as the mediator to block the confounder. With the
+front-door adjustment, the causal effect between the treatment and the outcome
+is decomposed into the causal effect between the treatment and the mediator,
+which is estimated by applying the idea of random walk, and the causal effect
+between the mediator and the outcome, which is estimated with normalized
+weighted geometric mean approximation. To investigate the effectiveness of the
+proposed method, an adversarial multi-hop fact verification dataset and a
+symmetric multi-hop fact verification dataset are proposed with the help of the
+large language model. Experimental results show that Causal Walk outperforms
+some previous debiasing methods on both existing datasets and the newly
+constructed datasets. Code and data will be released at
+https://github.com/zcccccz/CausalWalk."
+51,Chao Chen; Jie Liu; Chang Zhou; Jie Tang; Gangshan Wu,Sketch and Refine: Towards Fast and Accurate Lane Detection,"Lane detection is to determine the precise location and shape of lanes on the
+road. Despite efforts made by current methods, it remains a challenging task
+due to the complexity of real-world scenarios. Existing approaches, whether
+proposal-based or keypoint-based, suffer from depicting lanes effectively and
+efficiently. Proposal-based methods detect lanes by distinguishing and
+regressing a collection of proposals in a streamlined top-down way, yet lack
+sufficient flexibility in lane representation. Keypoint-based methods, on the
+other hand, construct lanes flexibly from local descriptors, which typically
+entail complicated post-processing. In this paper, we present a
+""Sketch-and-Refine"" paradigm that utilizes the merits of both keypoint-based
+and proposal-based methods. The motivation is that local directions of lanes
+are semantically simple and clear. At the ""Sketch"" stage, local directions of
+keypoints can be easily estimated by fast convolutional layers. Then we can
+build a set of lane proposals accordingly with moderate accuracy. At the
+""Refine"" stage, we further optimize these proposals via a novel Lane Segment
+Association Module (LSAM), which allows adaptive lane segment adjustment. Last
+but not least, we propose multi-level feature integration to enrich lane
+feature representations more efficiently. Based on the proposed ""Sketch and
+Refine"" paradigm, we propose a fast yet effective lane detector dubbed
+""SRLane"". Experiments show that our SRLane can run at a fast speed (i.e., 278
+FPS) while yielding an F1 score of 78.9\%. The source code is available at:
+https://github.com/passerer/SRLane."
+52,"Seungjun An; Seonghoon Park; Gyeongnyeon Kim; Jeongyeol Baek;
+Byeongwon Lee; Seungryong Kim",Context Enhanced Transformer for Single Image Object Detection in Video Data,"With the increasing importance of video data in real-world applications,
+there is a rising need for efficient object detection methods that utilize
+temporal information. While existing video object detection (VOD) techniques
+employ various strategies to address this challenge, they typically depend on
+locally adjacent frames or randomly sampled images within a clip. Although
+recent Transformer-based VOD methods have shown promising results, their
+reliance on multiple inputs and additional network complexity to incorporate
+temporal information limits their practical applicability. In this paper, we
+propose a novel approach to single image object detection, called Context
+Enhanced TRansformer (CETR), by incorporating temporal context into DETR using
+a newly designed memory module. To efficiently store temporal information, we
+construct a class-wise memory that collects contextual information across data.
+Additionally, we present a classification-based sampling technique to
+selectively utilize the relevant memory for the current image. In the testing,
+We introduce a test-time memory adaptation method that updates individual
+memory functions by considering the test distribution. Experiments with CityCam
+and ImageNet VID datasets exhibit the efficiency of the framework on various
+video systems. The project page and code will be made available at:
+https://ku-cvlab.github.io/CETR."
+53,Khoi Le; Trinh Pham; Tho Quan; Anh Tuan Luu,"LAMPAT: Low-Rank Adaption for Multilingual Paraphrasing Using Adversarial
+Training","Paraphrases are texts that convey the same meaning while using different
+words or sentence structures. It can be used as an automatic data augmentation
+tool for many Natural Language Processing tasks, especially when dealing with
+low-resource languages, where data shortage is a significant problem. To
+generate a paraphrase in multilingual settings, previous studies have leveraged
+the knowledge from the machine translation field, i.e., forming a paraphrase
+through zero-shot machine translation in the same language. Despite good
+performance on human evaluation, those methods still require parallel
+translation datasets, thus making them inapplicable to languages that do not
+have parallel corpora. To mitigate that problem, we proposed the first
+unsupervised multilingual paraphrasing model, LAMPAT ($\textbf{L}$ow-rank
+$\textbf{A}$daptation for $\textbf{M}$ultilingual $\textbf{P}$araphrasing using
+$\textbf{A}$dversarial $\textbf{T}$raining), by which monolingual dataset is
+sufficient enough to generate a human-like and diverse sentence. Throughout the
+experiments, we found out that our method not only works well for English but
+can generalize on unseen languages as well. Data and code are available at
+https://github.com/VinAIResearch/LAMPAT."
+54,"Haimei Zhao; Qiming Zhang; Shanshan Zhao; Zhe Chen; Jing Zhang;
+Dacheng Tao",SimDistill: Simulated Multi-Modal Distillation for BEV 3D Object Detection,"Multi-view camera-based 3D object detection has become popular due to its low
+cost, but accurately inferring 3D geometry solely from camera data remains
+challenging and may lead to inferior performance. Although distilling precise
+3D geometry knowledge from LiDAR data could help tackle this challenge, the
+benefits of LiDAR information could be greatly hindered by the significant
+modality gap between different sensory modalities. To address this issue, we
+propose a Simulated multi-modal Distillation (SimDistill) method by carefully
+crafting the model architecture and distillation strategy. Specifically, we
+devise multi-modal architectures for both teacher and student models, including
+a LiDAR-camera fusion-based teacher and a simulated fusion-based student. Owing
+to the ``identical'' architecture design, the student can mimic the teacher to
+generate multi-modal features with merely multi-view images as input, where a
+geometry compensation module is introduced to bridge the modality gap.
+Furthermore, we propose a comprehensive multi-modal distillation scheme that
+supports intra-modal, cross-modal, and multi-modal fusion distillation
+simultaneously in the Bird's-eye-view space. Incorporating them together, our
+SimDistill can learn better feature representations for 3D object detection
+while maintaining a cost-effective camera-only deployment. Extensive
+experiments validate the effectiveness and superiority of SimDistill over
+state-of-the-art methods, achieving an improvement of 4.8\% mAP and 4.1\% NDS
+over the baseline detector. The source code will be released at
+https://github.com/ViTAE-Transformer/SimDistill."
+55,"Cheng-Ming Lin; Ching Chang; Wei-Yao Wang; Kuang-Da Wang; Wen-
+Chih Peng",Root Cause Analysis in Microservice Using Neural Granger Causal Disocvery,"In recent years, microservices have gained widespread adoption in IT
+operations due to their scalability, maintenance, and flexibility. However, it
+becomes challenging for site reliability engineers (SREs) to pinpoint the root
+cause due to the complex relationships in microservices when facing system
+malfunctions. Previous research employed structured learning methods (e.g.,
+PC-algorithm) to establish causal relationships and derive root causes from
+causal graphs. Nevertheless, they ignored the temporal order of time series
+data and failed to leverage the rich information inherent in the temporal
+relationships. For instance, in cases where there is a sudden spike in CPU
+utilization, it can lead to an increase in latency for other microservices.
+However, in this scenario, the anomaly in CPU utilization occurs before the
+latency increase, rather than simultaneously. As a result, the PC-algorithm
+fails to capture such characteristics. To address these challenges, we propose
+RUN, a novel approach for root cause analysis using neural Granger causal
+discovery with contrastive learning. RUN enhances the backbone encoder by
+integrating contextual information from time series, and leverages a time
+series forecasting model to conduct neural Granger causal discovery. In
+addition, RUN incorporates Pagerank with a personalization vector to
+efficiently recommend the top-k root causes. Extensive experiments conducted on
+the synthetic and real-world microservice-based datasets demonstrate that RUN
+noticeably outperforms the state-of-the-art root cause analysis methods.
+Moreover, we provide an analysis scenario for the sock-shop case to showcase
+the practicality and efficacy of RUN in microservice-based applications. Our
+code is publicly available at https://github.com/zmlin1998/RUN."
+56,Han Zhao; Xu Yang; Cheng Deng; Junchi Yan,Dynamic Reactive Spiking Graph Neural Network,"A main concern in cognitive neuroscience is to decode the overt neural spike
+train observations and infer latent representations under neural circuits.
+However, traditional methods entail strong prior on network structure and
+hardly meet the demand for real spike data. Here we propose a novel neural
+network approach called Neuron Activation Network that extracts neural
+information explicitly from single trial neuron population spike trains. Our
+proposed method consists of a spatiotemporal learning procedure on sensory
+environment and a message passing mechanism on population graph, followed by a
+neuron activation process in a recursive fashion. Our model is aimed to
+reconstruct neuron information while inferring representations of neuron
+spiking states. We apply our model to retinal ganglion cells and the
+experimental results suggest that our model holds a more potent capability in
+generating neural spike sequences with high fidelity than the state-of-the-art
+methods, as well as being more expressive and having potential to disclose
+latent spiking mechanism. The source code will be released with the final
+paper."
+57,Yuting Ma; Yuanzhi Yao; Xiaohua Xu,"PPIDSG: A Privacy-Preserving Image Distribution Sharing Scheme with GAN in
+Federated Learning","Federated learning (FL) has attracted growing attention since it allows for
+privacy-preserving collaborative training on decentralized clients without
+explicitly uploading sensitive data to the central server. However, recent
+works have revealed that it still has the risk of exposing private data to
+adversaries. In this paper, we conduct reconstruction attacks and enhance
+inference attacks on various datasets to better understand that sharing trained
+classification model parameters to a central server is the main problem of
+privacy leakage in FL. To tackle this problem, a privacy-preserving image
+distribution sharing scheme with GAN (PPIDSG) is proposed, which consists of a
+block scrambling-based encryption algorithm, an image distribution sharing
+method, and local classification training. Specifically, our method can capture
+the distribution of a target image domain which is transformed by the block
+encryption algorithm, and upload generator parameters to avoid classifier
+sharing with negligible influence on model performance. Furthermore, we apply a
+feature extractor to motivate model utility and train it separately from the
+classifier. The extensive experimental results and security analyses
+demonstrate the superiority of our proposed scheme compared to other
+state-of-the-art defense methods. The code is available at
+https://github.com/ytingma/PPIDSG."
+58,Zijian Min; Gundu Mohamed Hassan; Geun-Sik Jo,Robust Blind Text Image Deblurring via Maximum Consensus Framework,"This study addresses an image-matching problem in challenging cases, such as
+large scene variations or textureless scenes. To gain robustness to such
+situations, most previous studies have attempted to encode the global contexts
+of a scene via graph neural networks or transformers. However, these contexts
+do not explicitly represent high-level contextual information, such as
+structural shapes or semantic instances; therefore, the encoded features are
+still not sufficiently discriminative in challenging scenes. We propose a novel
+image-matching method that applies a topic-modeling strategy to encode
+high-level contexts in images. The proposed method trains latent semantic
+instances called topics. It explicitly models an image as a multinomial
+distribution of topics, and then performs probabilistic feature matching. This
+approach improves the robustness of matching by focusing on the same semantic
+areas between the images. In addition, the inferred topics provide
+interpretability for matching the results, making our method explainable.
+Extensive experiments on outdoor and indoor datasets show that our method
+outperforms other state-of-the-art methods, particularly in challenging cases.
+The code is available at https://github.com/TruongKhang/TopicFM."
+59,Yuhao Huang; Sanping Zhou; Junjie Zhang; Jinpeng Dong; Nanning Zheng,"Voxel or Pillar: Exploring Efficient Point Cloud Representation for 3D Object
+Detection","Efficient representation of point clouds is fundamental for LiDAR-based 3D
+object detection. While recent grid-based detectors often encode point clouds
+into either voxels or pillars, the distinctions between these approaches remain
+underexplored. In this paper, we quantify the differences between the current
+encoding paradigms and highlight the limited vertical learning within. To
+tackle these limitations, we introduce a hybrid Voxel-Pillar Fusion network
+(VPF), which synergistically combines the unique strengths of both voxels and
+pillars. Specifically, we first develop a sparse voxel-pillar encoder that
+encodes point clouds into voxel and pillar features through 3D and 2D sparse
+convolutions respectively, and then introduce the Sparse Fusion Layer (SFL),
+facilitating bidirectional interaction between sparse voxel and pillar
+features. Our efficient, fully sparse method can be seamlessly integrated into
+both dense and sparse detectors. Leveraging this powerful yet straightforward
+framework, VPF delivers competitive performance, achieving real-time inference
+speeds on the nuScenes and Waymo Open Dataset. The code will be available."
+60,Sen Xu; Shikui Wei; Tao Ruan; Lixin Liao,Learning Invariant Inter-pixel Correlations for Superpixel Generation,"Deep superpixel algorithms have made remarkable strides by substituting
+hand-crafted features with learnable ones. Nevertheless, we observe that
+existing deep superpixel methods, serving as mid-level representation
+operations, remain sensitive to the statistical properties (e.g., color
+distribution, high-level semantics) embedded within the training dataset.
+Consequently, learnable features exhibit constrained discriminative capability,
+resulting in unsatisfactory pixel grouping performance, particularly in
+untrainable application scenarios. To address this issue, we propose the
+Content Disentangle Superpixel (CDS) algorithm to selectively separate the
+invariant inter-pixel correlations and statistical properties, i.e., style
+noise. Specifically, We first construct auxiliary modalities that are
+homologous to the original RGB image but have substantial stylistic variations.
+Then, driven by mutual information, we propose the local-grid correlation
+alignment across modalities to reduce the distribution discrepancy of
+adaptively selected features and learn invariant inter-pixel correlations.
+Afterwards, we perform global-style mutual information minimization to enforce
+the separation of invariant content and train data styles. The experimental
+results on four benchmark datasets demonstrate the superiority of our approach
+to existing state-of-the-art methods, regarding boundary adherence,
+generalization, and efficiency. Code and pre-trained model are available at
+https://github.com/rookiie/CDSpixel."
+61,Haisong Gong; Weizhi Xu; Shu Wu; Qiang Liu; Liang Wang,Heterogeneous Graph Reasoning for Fact Checking over Texts and Tables,"Fact checking aims to predict claim veracity by reasoning over multiple
+evidence pieces. It usually involves evidence retrieval and veracity reasoning.
+In this paper, we focus on the latter, reasoning over unstructured text and
+structured table information. Previous works have primarily relied on
+fine-tuning pretrained language models or training homogeneous-graph-based
+models. Despite their effectiveness, we argue that they fail to explore the
+rich semantic information underlying the evidence with different structures. To
+address this, we propose a novel word-level Heterogeneous-graph-based model for
+Fact Checking over unstructured and structured information, namely HeterFC. Our
+approach leverages a heterogeneous evidence graph, with words as nodes and
+thoughtfully designed edges representing different evidence properties. We
+perform information propagation via a relational graph neural network,
+facilitating interactions between claims and evidence. An attention-based
+method is utilized to integrate information, combined with a language model for
+generating predictions. We introduce a multitask loss function to account for
+potential inaccuracies in evidence retrieval. Comprehensive experiments on the
+large fact checking dataset FEVEROUS demonstrate the effectiveness of HeterFC.
+Code will be released at: https://github.com/Deno-V/HeterFC."
+62,Wang Liu; Wei Gao; Xingming Mu,"Fast Inter-frame Motion Prediction for Compressed Dynamic Point Cloud
+Attribute Enhancement","It is proposed a new method of compressing laser pulse by fast extending
+plasma gratings(FEPG), which is created by ionizing the hypersound wave
+generated by stimulated Brillouin scattering(SBS) in the background gas.
+Ionized by a short laser pulse, the phonon forms a light-velocity FEPG to fully
+reflect a resonant pump laser. As the reflecting surface moves with a light
+velocity, the reflected pulse is temporally overlapped and compressed. This
+regime is supported by the simulation results of a fully kinetic
+particle-in-cell(PIC) code Opic with a laser wavelength of 1um, displaying a
+pump pulse is compressed from 13ps to a few cycles(7.2fs), with an efficiency
+close to 80%. It is a promising method to produce critical laser powers due to
+several features: high efficiency without a linear stage, robustness to plasma
+instabilities, no seed and a wide range of pump intensity."
+63,Jiazhi Guan; Yi Zhao; Zhuoer Xu; Changhua Meng; Ke Xu; Youjian Zhao,Adversarial Robust Safeguard for Evading Deep Facial Manipulation,"Unlearnable example attacks are data poisoning techniques that can be used to
+safeguard public data against unauthorized use for training deep learning
+models. These methods add stealthy perturbations to the original image, thereby
+making it difficult for deep learning models to learn from these training data
+effectively. Current research suggests that adversarial training can, to a
+certain degree, mitigate the impact of unlearnable example attacks, while
+common data augmentation methods are not effective against such poisons.
+Adversarial training, however, demands considerable computational resources and
+can result in non-trivial accuracy loss. In this paper, we introduce the
+UEraser method, which outperforms current defenses against different types of
+state-of-the-art unlearnable example attacks through a combination of effective
+data augmentation policies and loss-maximizing adversarial augmentations. In
+stark contrast to the current SOTA adversarial training methods, UEraser uses
+adversarial augmentations, which extends beyond the confines of $ \ell_p $
+perturbation budget assumed by current unlearning attacks and defenses. It also
+helps to improve the model's generalization ability, thus protecting against
+accuracy loss. UEraser wipes out the unlearning effect with error-maximizing
+data augmentations, thus restoring trained model accuracies. Interestingly,
+UEraser-Lite, a fast variant without adversarial augmentations, is also highly
+effective in preserving clean accuracies. On challenging unlearnable CIFAR-10,
+CIFAR-100, SVHN, and ImageNet-subset datasets produced with various attacks, it
+achieves results that are comparable to those obtained during clean training.
+We also demonstrate its efficacy against possible adaptive attacks. Our code is
+open source and available to the deep learning community:
+https://github.com/lafeat/ueraser."
+64,Pengfei Zhu; Qian Wang; Yu Wang; Jialu Li; Qinghua Hu,"Every Node Is Different: Dynamically Fusing Self-Supervised Tasks for Attributed
+Graph Clustering","Attributed graph clustering is an unsupervised task that partitions nodes
+into different groups. Self-supervised learning (SSL) shows great potential in
+handling this task, and some recent studies simultaneously learn multiple SSL
+tasks to further boost performance. Currently, different SSL tasks are assigned
+the same set of weights for all graph nodes. However, we observe that some
+graph nodes whose neighbors are in different groups require significantly
+different emphases on SSL tasks. In this paper, we propose to dynamically learn
+the weights of SSL tasks for different nodes and fuse the embeddings learned
+from different SSL tasks to boost performance. We design an innovative graph
+clustering approach, namely Dynamically Fusing Self-Supervised Learning
+(DyFSS). Specifically, DyFSS fuses features extracted from diverse SSL tasks
+using distinct weights derived from a gating network. To effectively learn the
+gating network, we design a dual-level self-supervised strategy that
+incorporates pseudo labels and the graph structure. Extensive experiments on
+five datasets show that DyFSS outperforms the state-of-the-art multi-task SSL
+methods by up to 8.66% on the accuracy metric. The code of DyFSS is available
+at: https://github.com/q086/DyFSS."
+65,Junjia Huang; Haofeng Li; Xiang Wan; Guanbin Li,UniCell: Universal Cell Nucleus Classification via Prompt Learning,"The recognition of multi-class cell nuclei can significantly facilitate the
+process of histopathological diagnosis. Numerous pathological datasets are
+currently available, but their annotations are inconsistent. Most existing
+methods require individual training on each dataset to deduce the relevant
+labels and lack the use of common knowledge across datasets, consequently
+restricting the quality of recognition. In this paper, we propose a universal
+cell nucleus classification framework (UniCell), which employs a novel prompt
+learning mechanism to uniformly predict the corresponding categories of
+pathological images from different dataset domains. In particular, our
+framework adopts an end-to-end architecture for nuclei detection and
+classification, and utilizes flexible prediction heads for adapting various
+datasets. Moreover, we develop a Dynamic Prompt Module (DPM) that exploits the
+properties of multiple datasets to enhance features. The DPM first integrates
+the embeddings of datasets and semantic categories, and then employs the
+integrated prompts to refine image representations, efficiently harvesting the
+shared knowledge among the related cell types and data sources. Experimental
+results demonstrate that the proposed method effectively achieves the
+state-of-the-art results on four nucleus detection and classification
+benchmarks. Code and models are available at https://github.com/lhaof/UniCell"
+66,Ying-Ying Chang; Wei-Yao Wang; Wen-Chih Peng,"SeGA: Preference-Aware Self-Contrastive Learning with Prompts for Anomalous
+User Detection on Twitter","In the dynamic and rapidly evolving world of social media, detecting
+anomalous users has become a crucial task to address malicious activities such
+as misinformation and cyberbullying. As the increasing number of anomalous
+users improves the ability to mimic normal users and evade detection, existing
+methods only focusing on bot detection are ineffective in terms of capturing
+subtle distinctions between users. To address these challenges, we proposed
+SeGA, preference-aware self-contrastive learning for anomalous user detection,
+which leverages heterogeneous entities and their relations in the Twittersphere
+to detect anomalous users with different malicious strategies. SeGA utilizes
+the knowledge of large language models to summarize user preferences via posts.
+In addition, integrating user preferences with prompts as pseudo-labels for
+preference-aware self-contrastive learning enables the model to learn
+multifaceted aspects for describing the behaviors of users. Extensive
+experiments on the proposed TwBNT benchmark demonstrate that SeGA significantly
+outperforms the state-of-the-art methods (+3.5\% ~ 27.6\%) and empirically
+validate the effectiveness of the model design and pre-training strategies. Our
+code and data are publicly available at https://github.com/ying0409/SeGA."
+67,"Yuchen Su; Zhineng Chen; Zhiwen Shao; Yuning Du; Zhilong Ji; Jinfeng
+Bai; Yong Zhou; Yu-Gang Jiang","LRANet: Towards Accurate and Efficient Scene Text Detection with Low-Rank
+Approximation Network","Recently, regression-based methods, which predict parameterized text shapes
+for text localization, have gained popularity in scene text detection. However,
+the existing parameterized text shape methods still have limitations in
+modeling arbitrary-shaped texts due to ignoring the utilization of
+text-specific shape information. Moreover, the time consumption of the entire
+pipeline has been largely overlooked, leading to a suboptimal overall inference
+speed. To address these issues, we first propose a novel parameterized text
+shape method based on low-rank approximation. Unlike other shape representation
+methods that employ data-irrelevant parameterization, our approach utilizes
+singular value decomposition and reconstructs the text shape using a few
+eigenvectors learned from labeled text contours. By exploring the shape
+correlation among different text contours, our method achieves consistency,
+compactness, simplicity, and robustness in shape representation. Next, we
+propose a dual assignment scheme for speed acceleration. It adopts a sparse
+assignment branch to accelerate the inference speed, and meanwhile, provides
+ample supervised signals for training through a dense assignment branch.
+Building upon these designs, we implement an accurate and efficient
+arbitrary-shaped text detector named LRANet. Extensive experiments are
+conducted on several challenging benchmarks, demonstrating the superior
+accuracy and efficiency of LRANet compared to state-of-the-art methods. Code is
+available at: \url{https://github.com/ychensu/LRANet.git}"
+68,Yanzuo Lu; Meng Shen; Andy J Ma; Xiaohua Xie; Jian-Huang Lai,"MLNet: Mutual Learning Network with Neighborhood Invariance for Universal
+Domain Adaptation","Universal domain adaptation (UniDA) is a practical but challenging problem,
+in which information about the relation between the source and the target
+domains is not given for knowledge transfer. Existing UniDA methods may suffer
+from the problems of overlooking intra-domain variations in the target domain
+and difficulty in separating between the similar known and unknown class. To
+address these issues, we propose a novel Mutual Learning Network (MLNet) with
+neighborhood invariance for UniDA. In our method, confidence-guided invariant
+feature learning with self-adaptive neighbor selection is designed to reduce
+the intra-domain variations for more generalizable feature representation. By
+using the cross-domain mixup scheme for better unknown-class identification,
+the proposed method compensates for the misidentified known-class errors by
+mutual learning between the closed-set and open-set classifiers. Extensive
+experiments on three publicly available benchmarks demonstrate that our method
+achieves the best results compared to the state-of-the-arts in most cases and
+significantly outperforms the baseline across all the four settings in UniDA.
+Code is available at https://github.com/YanzuoLu/MLNet."
+69,"Kezheng Xiong; Maoji Zheng; Qingshan Xu; Chenglu Wen; Siqi Shen;
+Cheng Wang","SPEAL: Skeletal Prior Embedded Attention Learning for Cross-Source Point
+Cloud Registration","Point cloud registration, a fundamental task in 3D computer vision, has
+remained largely unexplored in cross-source point clouds and unstructured
+scenes. The primary challenges arise from noise, outliers, and variations in
+scale and density. However, neglected geometric natures of point clouds
+restricts the performance of current methods. In this paper, we propose a novel
+method termed SPEAL to leverage skeletal representations for effective learning
+of intrinsic topologies of point clouds, facilitating robust capture of
+geometric intricacy. Specifically, we design the Skeleton Extraction Module to
+extract skeleton points and skeletal features in an unsupervised manner, which
+is inherently robust to noise and density variances. Then, we propose the
+Skeleton-Aware GeoTransformer to encode high-level skeleton-aware features. It
+explicitly captures the topological natures and inter-point-cloud skeletal
+correlations with the noise-robust and density-invariant skeletal
+representations. Next, we introduce the Correspondence Dual-Sampler to
+facilitate correspondences by augmenting the correspondence set with skeletal
+correspondences. Furthermore, we construct a challenging novel large-scale
+cross-source point cloud dataset named KITTI CrossSource for benchmarking
+cross-source point cloud registration methods. Extensive quantitative and
+qualitative experiments are conducted to demonstrate our approach's superiority
+and robustness on both cross-source and same-source datasets. To the best of
+our knowledge, our approach is the first to facilitate point cloud registration
+with skeletal geometric priors."
+70,Yufeng Huang; Jiji Tang; Zhuo Chen; Rongsheng Zhang; Xinfeng Zhang; Weijie Chen; Zeng Zhao; Zhou Zhao; Tangjie Lv; Zhipeng Hu; Wen Zhang,Structure-CLIP: Towards Scene Graph Knowledge to Enhance Multi-Modal Structured Representations,"Large-scale vision-language pre-training has achieved significant performance
+in multi-modal understanding and generation tasks. However, existing methods
+often perform poorly on image-text matching tasks that require structured
+representations, i.e., representations of objects, attributes, and relations.
+As illustrated in Fig.~reffig:case (a), the models cannot make a distinction
+between ``An astronaut rides a horse"" and ``A horse rides an astronaut"". This
+is because they fail to fully leverage structured knowledge when learning
+representations in multi-modal scenarios. In this paper, we present an
+end-to-end framework Structure-CLIP, which integrates Scene Graph Knowledge
+(SGK) to enhance multi-modal structured representations. Firstly, we use scene
+graphs to guide the construction of semantic negative examples, which results
+in an increased emphasis on learning structured representations. Moreover, a
+Knowledge-Enhance Encoder (KEE) is proposed to leverage SGK as input to further
+enhance structured representations. To verify the effectiveness of the proposed
+framework, we pre-train our model with the aforementioned approaches and
+conduct experiments on downstream tasks. Experimental results demonstrate that
+Structure-CLIP achieves state-of-the-art (SOTA) performance on VG-Attribution
+and VG-Relation datasets, with 12.5% and 4.1% ahead of the multi-modal SOTA
+model respectively. Meanwhile, the results on MSCOCO indicate that
+Structure-CLIP significantly enhances the structured representations while
+maintaining the ability of general representations. Our code is available at
+https://github.com/zjukg/Structure-CLIP."
+71,"Yuhua Jiang; Qihan Liu; Xiaoteng Ma; Chenghao Li; Yiqin Yang; Jun Yang;
+Bin Liang; Qianchuan Zhao",Learning Diverse Risk Preferences in Population-Based Self-Play,"Among the great successes of Reinforcement Learning (RL), self-play
+algorithms play an essential role in solving competitive games. Current
+self-play algorithms optimize the agent to maximize expected win-rates against
+its current or historical copies, making it often stuck in the local optimum
+and its strategy style simple and homogeneous. A possible solution is to
+improve the diversity of policies, which helps the agent break the stalemate
+and enhances its robustness when facing different opponents. However, enhancing
+diversity in the self-play algorithms is not trivial. In this paper, we aim to
+introduce diversity from the perspective that agents could have diverse risk
+preferences in the face of uncertainty. Specifically, we design a novel
+reinforcement learning algorithm called Risk-sensitive Proximal Policy
+Optimization (RPPO), which smoothly interpolates between worst-case and
+best-case policy learning and allows for policy learning with desired risk
+preferences. Seamlessly integrating RPPO with population-based self-play,
+agents in the population optimize dynamic risk-sensitive objectives with
+experiences from playing against diverse opponents. Empirical results show that
+our method achieves comparable or superior performance in competitive games and
+that diverse modes of behaviors emerge. Our code is public online at
+\url{https://github.com/Jackory/RPBT}."
+72,Henrique Morimitsu; Xiaobin Zhu; Xiangyang Ji; Xu-Cheng Yin,Recurrent Partial Kernel Network for Efficient Optical Flow Estimation,"We propose a novel end-to-end deep architecture for face landmark detection,
+based on a deep convolutional and deconvolutional network followed by carefully
+designed recurrent network structures. The pipeline of this architecture
+consists of three parts. Through the first part, we encode an input face image
+to resolution-preserved deconvolutional feature maps via a deep network with
+stacked convolutional and deconvolutional layers. Then, in the second part, we
+estimate the initial coordinates of the facial key points by an additional
+convolutional layer on top of these deconvolutional feature maps. In the last
+part, by using the deconvolutional feature maps and the initial facial key
+points as input, we refine the coordinates of the facial key points by a
+recurrent network that consists of multiple Long-Short Term Memory (LSTM)
+components. Extensive evaluations on several benchmark datasets show that the
+proposed deep architecture has superior performance against the
+state-of-the-art methods."
+73,Haoan Wang; Shilong Jia; Tieyong Zeng; Guixu Zhang; Zhi Li,Triple Feature Disentanglement for One-Stage Adaptive Object Detection,"Tagging based relational triple extraction methods are attracting growing
+research attention recently. However, most of these methods take a
+unidirectional extraction framework that first extracts all subjects and then
+extracts objects and relations simultaneously based on the subjects extracted.
+This framework has an obvious deficiency that it is too sensitive to the
+extraction results of subjects. To overcome this deficiency, we propose a
+bidirectional extraction framework based method that extracts triples based on
+the entity pairs extracted from two complementary directions. Concretely, we
+first extract all possible subject-object pairs from two paralleled directions.
+These two extraction directions are connected by a shared encoder component,
+thus the extraction features from one direction can flow to another direction
+and vice versa. By this way, the extractions of two directions can boost and
+complement each other. Next, we assign all possible relations for each entity
+pair by a biaffine model. During training, we observe that the share structure
+will lead to a convergence rate inconsistency issue which is harmful to
+performance. So we propose a share-aware learning mechanism to address it. We
+evaluate the proposed model on multiple benchmark datasets. Extensive
+experimental results show that the proposed model is very effective and it
+achieves state-of-the-art results on all of these datasets. Moreover,
+experiments show that both the proposed bidirectional extraction framework and
+the share-aware learning mechanism have good adaptability and can be used to
+improve the performance of other tagging based methods. The source code of our
+work is available at: https://github.com/neukg/BiRTE."
+74,Duolikun Danier; Fan Zhang; David Bull,LDMVFI: Video Frame Interpolation with Latent Diffusion Models,"Existing works on video frame interpolation (VFI) mostly employ deep neural
+networks that are trained by minimizing the L1, L2, or deep feature space
+distance (e.g. VGG loss) between their outputs and ground-truth frames.
+However, recent works have shown that these metrics are poor indicators of
+perceptual VFI quality. Towards developing perceptually-oriented VFI methods,
+in this work we propose latent diffusion model-based VFI, LDMVFI. This
+approaches the VFI problem from a generative perspective by formulating it as a
+conditional generation problem. As the first effort to address VFI using latent
+diffusion models, we rigorously benchmark our method on common test sets used
+in the existing VFI literature. Our quantitative experiments and user study
+indicate that LDMVFI is able to interpolate video content with favorable
+perceptual quality compared to the state of the art, even in the
+high-resolution regime. Our code is available at
+https://github.com/danier97/LDMVFI."
+75,Hongyi Chen; Jingtao Ding; Yong Li; Yue Wang; Xiao-Ping Zhang,Social Physics Informed Diffusion Model for Crowd Simulation,"Crowd simulation holds crucial applications in various domains, such as urban
+planning, architectural design, and traffic arrangement. In recent years,
+physics-informed machine learning methods have achieved state-of-the-art
+performance in crowd simulation but fail to model the heterogeneity and
+multi-modality of human movement comprehensively. In this paper, we propose a
+social physics-informed diffusion model named SPDiff to mitigate the above gap.
+SPDiff takes both the interactive and historical information of crowds in the
+current timeframe to reverse the diffusion process, thereby generating the
+distribution of pedestrian movement in the subsequent timeframe. Inspired by
+the well-known social physics model, i.e., Social Force, regarding crowd
+dynamics, we design a crowd interaction module to guide the denoising process
+and further enhance this module with the equivariant properties of crowd
+interactions. To mitigate error accumulation in long-term simulations, we
+propose a multi-frame rollout training algorithm for diffusion modeling.
+Experiments conducted on two real-world datasets demonstrate the superior
+performance of SPDiff in terms of macroscopic and microscopic evaluation
+metrics. Code and appendix are available at
+https://github.com/tsinghua-fib-lab/SPDiff."
+76,Jinsong Liu; Chenghan Xie; Qi Deng; Dongdong Ge; Yinyu Ye,Sketched Newton Value Iteration for Large-Scale Markov Decision Processes,"We propose a novel network pruning approach by information preserving of
+pre-trained network weights (filters). Network pruning with the information
+preserving is formulated as a matrix sketch problem, which is efficiently
+solved by the off-the-shelf Frequent Direction method. Our approach, referred
+to as FilterSketch, encodes the second-order information of pre-trained
+weights, which enables the representation capacity of pruned networks to be
+recovered with a simple fine-tuning procedure. FilterSketch requires neither
+training from scratch nor data-driven iterative optimization, leading to a
+several-orders-of-magnitude reduction of time cost in the optimization of
+pruning. Experiments on CIFAR-10 show that FilterSketch reduces 63.3% of FLOPs
+and prunes 59.9% of network parameters with negligible accuracy cost for
+ResNet-110. On ILSVRC-2012, it reduces 45.5% of FLOPs and removes 43.0% of
+parameters with only 0.69% accuracy drop for ResNet-50. Our code and pruned
+models can be found at https://github.com/lmbxmu/FilterSketch."
+77,"Luzhi Wang; Dongxiao He; He Zhang; Yixin Liu; Wenjie Wang; Shirui Pan;
+Di Jin; Tat-Seng Chua",GOODAT: Towards Test-Time Graph Out-of-Distribution Detection,"Graph neural networks (GNNs) have found widespread application in modeling
+graph data across diverse domains. While GNNs excel in scenarios where the
+testing data shares the distribution of their training counterparts (in
+distribution, ID), they often exhibit incorrect predictions when confronted
+with samples from an unfamiliar distribution (out-of-distribution, OOD). To
+identify and reject OOD samples with GNNs, recent studies have explored graph
+OOD detection, often focusing on training a specific model or modifying the
+data on top of a well-trained GNN. Despite their effectiveness, these methods
+come with heavy training resources and costs, as they need to optimize the
+GNN-based models on training data. Moreover, their reliance on modifying the
+original GNNs and accessing training data further restricts their universality.
+To this end, this paper introduces a method to detect Graph Out-of-Distribution
+At Test-time (namely GOODAT), a data-centric, unsupervised, and plug-and-play
+solution that operates independently of training data and modifications of GNN
+architecture. With a lightweight graph masker, GOODAT can learn informative
+subgraphs from test samples, enabling the capture of distinct graph patterns
+between OOD and ID samples. To optimize the graph masker, we meticulously
+design three unsupervised objective functions based on the graph information
+bottleneck principle, motivating the masker to capture compact yet informative
+subgraphs for OOD detection. Comprehensive evaluations confirm that our GOODAT
+method outperforms state-of-the-art benchmarks across a variety of real-world
+datasets. The code is available at Github: https://github.com/Ee1s/GOODAT"
+78,Zexin Hu; Kun Hu; Clinton Mo; Lei Pan; Zhiyong Wang,"Terrain Diffusion Network: Climatic-Aware Terrain Generation with Geological
+Sketch Guidance","Sketch-based terrain generation seeks to create realistic landscapes for
+virtual environments in various applications such as computer games, animation
+and virtual reality. Recently, deep learning based terrain generation has
+emerged, notably the ones based on generative adversarial networks (GAN).
+However, these methods often struggle to fulfill the requirements of flexible
+user control and maintain generative diversity for realistic terrain.
+Therefore, we propose a novel diffusion-based method, namely terrain diffusion
+network (TDN), which actively incorporates user guidance for enhanced
+controllability, taking into account terrain features like rivers, ridges,
+basins, and peaks. Instead of adhering to a conventional monolithic denoising
+process, which often compromises the fidelity of terrain details or the
+alignment with user control, a multi-level denoising scheme is proposed to
+generate more realistic terrains by taking into account fine-grained details,
+particularly those related to climatic patterns influenced by erosion and
+tectonic activities. Specifically, three terrain synthesisers are designed for
+structural, intermediate, and fine-grained level denoising purposes, which
+allow each synthesiser concentrate on a distinct terrain aspect. Moreover, to
+maximise the efficiency of our TDN, we further introduce terrain and sketch
+latent spaces for the synthesizers with pre-trained terrain autoencoders.
+Comprehensive experiments on a new dataset constructed from NASA Topology
+Images clearly demonstrate the effectiveness of our proposed method, achieving
+the state-of-the-art performance. Our code and dataset will be publicly
+available."
+79,Dongseob Kim; Seungho Lee; Junsuk Choe; Hyunjung Shim,Weakly Supervised Semantic Segmentation for Driving Scenes,"State-of-the-art techniques in weakly-supervised semantic segmentation (WSSS)
+using image-level labels exhibit severe performance degradation on driving
+scene datasets such as Cityscapes. To address this challenge, we develop a new
+WSSS framework tailored to driving scene datasets. Based on extensive analysis
+of dataset characteristics, we employ Contrastive Language-Image Pre-training
+(CLIP) as our baseline to obtain pseudo-masks. However, CLIP introduces two key
+challenges: (1) pseudo-masks from CLIP lack in representing small object
+classes, and (2) these masks contain notable noise. We propose solutions for
+each issue as follows. (1) We devise Global-Local View Training that seamlessly
+incorporates small-scale patches during model training, thereby enhancing the
+model's capability to handle small-sized yet critical objects in driving scenes
+(e.g., traffic light). (2) We introduce Consistency-Aware Region Balancing
+(CARB), a novel technique that discerns reliable and noisy regions through
+evaluating the consistency between CLIP masks and segmentation predictions. It
+prioritizes reliable pixels over noisy pixels via adaptive loss weighting.
+Notably, the proposed method achieves 51.8\% mIoU on the Cityscapes test
+dataset, showcasing its potential as a strong WSSS baseline on driving scene
+datasets. Experimental results on CamVid and WildDash2 demonstrate the
+effectiveness of our method across diverse datasets, even with small-scale
+datasets or visually challenging conditions. The code is available at
+https://github.com/k0u-id/CARB."
+80,Zhan Lu; Qian Zheng; Boxin Shi; Xudong Jiang,"Pano-NeRF: Synthesizing High Dynamic Range Novel Views with Geometry
+from Sparse Low Dynamic Range Panoramic Images","Panoramic imaging research on geometry recovery and High Dynamic Range (HDR)
+reconstruction becomes a trend with the development of Extended Reality (XR).
+Neural Radiance Fields (NeRF) provide a promising scene representation for both
+tasks without requiring extensive prior data. However, in the case of inputting
+sparse Low Dynamic Range (LDR) panoramic images, NeRF often degrades with
+under-constrained geometry and is unable to reconstruct HDR radiance from LDR
+inputs. We observe that the radiance from each pixel in panoramic images can be
+modeled as both a signal to convey scene lighting information and a light
+source to illuminate other pixels. Hence, we propose the irradiance fields from
+sparse LDR panoramic images, which increases the observation counts for
+faithful geometry recovery and leverages the irradiance-radiance attenuation
+for HDR reconstruction. Extensive experiments demonstrate that the irradiance
+fields outperform state-of-the-art methods on both geometry recovery and HDR
+reconstruction and validate their effectiveness. Furthermore, we show a
+promising byproduct of spatially-varying lighting estimation. The code is
+available at https://github.com/Lu-Zhan/Pano-NeRF."
+81,Meng Xing; Zhiyong Feng; Yong Su; Changjae Oh,"Learning by Erasing: Conditional Entropy Based Transferable Out-of-Distribution
+Detection","Out-of-distribution (OOD) detection is essential to handle the distribution
+shifts between training and test scenarios. For a new in-distribution (ID)
+dataset, existing methods require retraining to capture the dataset-specific
+feature representation or data distribution. In this paper, we propose a deep
+generative models (DGM) based transferable OOD detection method, which is
+unnecessary to retrain on a new ID dataset. We design an image erasing strategy
+to equip exclusive conditional entropy distribution for each ID dataset, which
+determines the discrepancy of DGM's posteriori ucertainty distribution on
+different ID datasets. Owing to the powerful representation capacity of
+convolutional neural networks, the proposed model trained on complex dataset
+can capture the above discrepancy between ID datasets without retraining and
+thus achieve transferable OOD detection. We validate the proposed method on
+five datasets and verity that ours achieves comparable performance to the
+state-of-the-art group based OOD detection methods that need to be retrained to
+deploy on new ID datasets. Our code is available at
+https://github.com/oOHCIOo/CETOOD."
+82,Hao Shao; Yang Zhang; Qibin Hou,Polyper: Boundary Sensitive Polyp Segmentation,"We present a new boundary sensitive framework for polyp segmentation, called
+Polyper. Our method is motivated by a clinical approach that seasoned medical
+practitioners often leverage the inherent features of interior polyp regions to
+tackle blurred boundaries.Inspired by this, we propose explicitly leveraging
+polyp regions to bolster the model's boundary discrimination capability while
+minimizing computation. Our approach first extracts boundary and polyp regions
+from the initial segmentation map through morphological operators. Then, we
+design the boundary sensitive attention that concentrates on augmenting the
+features near the boundary regions using the interior polyp regions's
+characteristics to generate good segmentation results. Our proposed method can
+be seamlessly integrated with classical encoder networks, like ResNet-50,
+MiT-B1, and Swin Transformer. To evaluate the effectiveness of Polyper, we
+conduct experiments on five publicly available challenging datasets, and
+receive state-of-the-art performance on all of them. Code is available at
+https://github.com/haoshao-nku/medical_seg.git."
+83,"Lingfeng Wen; Xuan Tang; Mingjie Ouyang; Xiangxiang Shen; Jian Yang;
+Daxin Zhu; Mingsong Chen; Xian Wei",Hyperbolic Graph Diffusion Model,"Diffusion generative models (DMs) have achieved promising results in image
+and graph generation. However, real-world graphs, such as social networks,
+molecular graphs, and traffic graphs, generally share non-Euclidean topologies
+and hidden hierarchies. For example, the degree distributions of graphs are
+mostly power-law distributions. The current latent diffusion model embeds the
+hierarchical data in a Euclidean space, which leads to distortions and
+interferes with modeling the distribution. Instead, hyperbolic space has been
+found to be more suitable for capturing complex hierarchical structures due to
+its exponential growth property. In order to simultaneously utilize the data
+generation capabilities of diffusion models and the ability of hyperbolic
+embeddings to extract latent hierarchical distributions, we propose a novel
+graph generation method called, Hyperbolic Graph Diffusion Model (HGDM), which
+consists of an auto-encoder to encode nodes into successive hyperbolic
+embeddings, and a DM that operates in the hyperbolic latent space. HGDM
+captures the crucial graph structure distributions by constructing a hyperbolic
+potential node space that incorporates edge information. Extensive experiments
+show that HGDM achieves better performance in generic graph and molecule
+generation benchmarks, with a $48\%$ improvement in the quality of graph
+generation with highly hierarchical structures."
+84,"Jingchun Zhou; Zongxin He; Kin-Man Lam; Yudong Wang; Weishi Zhang;
+Chunle Guo; Chongyi Li","AMSP-UOD: When Vortex Convolution and Stochastic Perturbation Meet
+Underwater Object Detection","In this paper, we present a novel Amplitude-Modulated Stochastic Perturbation
+and Vortex Convolutional Network, AMSP-UOD, designed for underwater object
+detection. AMSP-UOD specifically addresses the impact of non-ideal imaging
+factors on detection accuracy in complex underwater environments. To mitigate
+the influence of noise on object detection performance, we propose AMSP Vortex
+Convolution (AMSP-VConv) to disrupt the noise distribution, enhance feature
+extraction capabilities, effectively reduce parameters, and improve network
+robustness. We design the Feature Association Decoupling Cross Stage Partial
+(FAD-CSP) module, which strengthens the association of long and short range
+features, improving the network performance in complex underwater environments.
+Additionally, our sophisticated post-processing method, based on Non-Maximum
+Suppression (NMS) with aspect-ratio similarity thresholds, optimizes detection
+in dense scenes, such as waterweed and schools of fish, improving object
+detection accuracy. Extensive experiments on the URPC and RUOD datasets
+demonstrate that our method outperforms existing state-of-the-art methods in
+terms of accuracy and noise immunity. AMSP-UOD proposes an innovative solution
+with the potential for real-world applications. Our code is available at
+https://github.com/zhoujingchun03/AMSP-UOD."
+85,Tangfei Liao; Xiaoqin Zhang; Li Zhao; Tao Wang; Guobao Xiao,VSFormer: Visual-Spatial Fusion Transformer for Correspondence Pruning,"Correspondence pruning aims to find correct matches (inliers) from an initial
+set of putative correspondences, which is a fundamental task for many
+applications. The process of finding is challenging, given the varying inlier
+ratios between scenes/image pairs due to significant visual differences.
+However, the performance of the existing methods is usually limited by the
+problem of lacking visual cues (\eg texture, illumination, structure) of
+scenes. In this paper, we propose a Visual-Spatial Fusion Transformer
+(VSFormer) to identify inliers and recover camera poses accurately. Firstly, we
+obtain highly abstract visual cues of a scene with the cross attention between
+local features of two-view images. Then, we model these visual cues and
+correspondences by a joint visual-spatial fusion module, simultaneously
+embedding visual cues into correspondences for pruning. Additionally, to mine
+the consistency of correspondences, we also design a novel module that combines
+the KNN-based graph and the transformer, effectively capturing both local and
+global contexts. Extensive experiments have demonstrated that the proposed
+VSFormer outperforms state-of-the-art methods on outdoor and indoor benchmarks.
+Our code is provided at the following repository:
+https://github.com/sugar-fly/VSFormer."
+86,Yiqun Diao; Qinbin Li; Bingsheng He,Exploiting Label Skews in Federated Learning with Model Concatenation,"Federated Learning (FL) has emerged as a promising solution to perform deep
+learning on different data owners without exchanging raw data. However, non-IID
+data has been a key challenge in FL, which could significantly degrade the
+accuracy of the final model. Among different non-IID types, label skews have
+been challenging and common in image classification and other tasks. Instead of
+averaging the local models in most previous studies, we propose FedConcat, a
+simple and effective approach that concatenates these local models as the base
+of the global model to effectively aggregate the local knowledge. To reduce the
+size of the global model, we adopt the clustering technique to group the
+clients by their label distributions and collaboratively train a model inside
+each cluster. We theoretically analyze the advantage of concatenation over
+averaging by analyzing the information bottleneck of deep neural networks.
+Experimental results demonstrate that FedConcat achieves significantly higher
+accuracy than previous state-of-the-art FL methods in various heterogeneous
+label skew distribution settings and meanwhile has lower communication costs.
+Our code is publicly available at https://github.com/sjtudyq/FedConcat."
+87,Yu Wang; Zexue He; Zhankui He; Hao Xu; Julian McAuley,"Deciphering Compatibility Relationships with Textual Descriptions via Extraction
+and Explanation","Understanding and accurately explaining compatibility relationships between
+fashion items is a challenging problem in the burgeoning domain of AI-driven
+outfit recommendations. Present models, while making strides in this area,
+still occasionally fall short, offering explanations that can be elementary and
+repetitive. This work aims to address these shortcomings by introducing the
+Pair Fashion Explanation (PFE) dataset, a unique resource that has been curated
+to illuminate these compatibility relationships. Furthermore, we propose an
+innovative two-stage pipeline model that leverages this dataset. This
+fine-tuning allows the model to generate explanations that convey the
+compatibility relationships between items. Our experiments showcase the model's
+potential in crafting descriptions that are knowledgeable, aligned with
+ground-truth matching correlations, and that produce understandable and
+informative descriptions, as assessed by both automatic metrics and human
+evaluation. Our code and data are released at
+https://github.com/wangyu-ustc/PairFashionExplanation"
